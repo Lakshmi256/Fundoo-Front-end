@@ -5,6 +5,7 @@ import {MatCardModule} from '@angular/material/card';
 
 
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -23,6 +24,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatCardModule,
+    
+   
     
   ],
   providers: [],
