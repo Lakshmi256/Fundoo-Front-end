@@ -1,5 +1,5 @@
 <div class="main-div">
-    <mat-card style="width: 25em;height: 63vh;box-shadow: rgb(6, 201, 250);background: rgb(34, 105, 110);margin-top: -15em;">
+    <mat-card style="width: 18em;height: 60vh;box-shadow:5px 4px 3px 3px;background: rgb(8, 108, 148);margin-top: -15em;">
         <div fxLayout="row" fxLayoutAlign="center" style="font-size:50px;margin-bottom:45px">
             <mat-card-title>
                 <span style="color:rgb(248, 123, 6);">M</span>
@@ -14,45 +14,45 @@
 
                     <mat-form-field appearance="fill">
                         <mat-label>name </mat-label>
-                        <input matInput placeholder="ex: Lakshmi prasad " formControlName="name" />
+                        <input type="text" matInput placeholder="ex: Lakshmi prasad " formControlName="name" />
                     </mat-form-field>
                 </div>
-            </mat-card-content>
-            <mat-card-content>
+
 
                 <div class="form-field">
                     <mat-form-field appearance="outline">
                         <mat-label>email </mat-label>
-                        <input matInput placeholder="ex:lp@gmail.com" formControlName="email">
+                        <input type="text" matInput placeholder="ex:lp@gmail.com" formControlName="email">
                     </mat-form-field>
 
                 </div>
-            </mat-card-content>
-            <mat-card-content>
+
 
                 <div class="form-field">
                     <mat-form-field appearance="outline">
                         <mat-label>mobile </mat-label>
-                        <input matInput placeholder="ex:9625140251" formControlName="mobile">
+                        <input type="text" matInput placeholder="ex:9625140251" formControlName="mobile">
 
                     </mat-form-field>
 
                 </div>
-            </mat-card-content>
-            <mat-card-content>
+
 
                 <div class="form-field">
                     <mat-form-field>
                         <mat-label>password</mat-label>
-                        <input matInput placeholder="your password " formControlName="password">
+                        <input type="password" matInput placeholder="your password " formControlName="password">
 
                     </mat-form-field>
                 </div>
+
+                <div class="button">
+                    <button mat-raised-button style='margin-right:100px;margin-top: 15px;'>Register</button>
+
+                    <a href="http://localhost:4200/login"><button mat-raised-button >   login</button></a>
+                </div>
             </mat-card-content>
-            <div class="form-field">
-                <button mat-raised-button>Register</button>
-                <a href="http://localhost:4200/login"><button mat-raised-button>login</button></a>
-            </div>
         </div>
+
     </mat-card>
 </div>
