@@ -3,7 +3,7 @@ import{MatSnackBar} from '@angular/material/snack-bar';
 import {NgForm, FormGroup,FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import{UserServiceService} from 'src/app/service/userservice.service';
-import { threadId } from 'worker_threads';
+
 
 @Component({
   selector: 'app-register',
@@ -16,9 +16,6 @@ registerForm:FormGroup;
     private router :Router,private snackbar:MatSnackBar){
       
     }
-
-
-
 
   ngOnInit(): void {
     this.registerForm=new FormGroup({
@@ -39,8 +36,7 @@ registerForm:FormGroup;
     (error:any)=>{
       this.snackbar.open(error.error.discription,'error',{duration:3000});
 
-    }
-    );
+    });
 
   }
 
