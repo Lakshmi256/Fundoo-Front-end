@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatButtonModule,
   
   ],
-  providers: [],
+  providers: [HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import{MatSnackBar} from '@angular/material/snack-bar';
-import {NgForm, FormGroup,FormControl } from '@angular/forms';
+import {NgForm, FormGroup,FormControl, FormControlName,ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import{UserServiceService} from 'src/app/service/userservice.service';
 
@@ -26,12 +26,13 @@ registerForm:FormGroup;
     })
   }
 
-  onSubmit(form:NgForm){
+  onSubmit(form:FormGroup){
     if (this.registerForm.invalid){
       return;
     }
     this.userservice.registration(this.registerForm.value).subscribe((user)=>{
       this.snackbar.open('registaration succefull','ok',{duration:3000});
+      this.router.navigate(['/login']);
     },
     (error:any)=>{
       this.snackbar.open(error.error.discription,'error',{duration:3000});
