@@ -18,8 +18,6 @@ export class RegisterComponent implements OnInit {
   hide = true;
   hide2=true;
   showMsg: boolean = false;
-
-
   constructor(private formBuilder: FormBuilder,  private userservice: UserServiceService, private matSnackBar: MatSnackBar, private router: Router) {   }
 
   onRegisterSubmit() {
@@ -30,11 +28,10 @@ export class RegisterComponent implements OnInit {
       this.showMsg = true;
       this.submitted = true;
       this.matSnackBar.open('Registration Successfull Please Verify Account Before Login', 'ok', { duration: 4000 });
-      this.showSpinner = false;
-     
+  
     },
       (error: any) => {
-        this.showSpinner = false;
+     
         this.matSnackBar.open('Bad Creaditial', 'ok', { duration: 4000 });
         console.log(error)
       });

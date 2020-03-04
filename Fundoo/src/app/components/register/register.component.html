@@ -1,17 +1,13 @@
 <div class="main-div">
     <mat-card style="width: 18em;height: 10em;box-shadow:5px 5px 3px 3px;background: rgb(5, 126, 134);margin-top: -15em;">
-
         <div fxLayout=" row " fxLayoutAlign="center " style="font-size:50px;margin-bottom:45px ">
             <mat-card-title>
-
                 <span style="color:rgb(253, 122, 0); ">F</span>
                 <span style="color:rgb(8, 193, 250); ">undoo</span>
                 <span style="color:rgb(255, 123, 0); ">N</span>
                 <span style="color:rgb(8, 193, 250); ">otes</span>
             </mat-card-title>
-
             <form [formGroup]="registerForm" (ngSubmit)="registerForm.valid && onSubmit()" noval>
-
                 <mat-form-field style="margin-bottom: -1.25em;">
                     <mat-icon matPrefix style="margin-right: 20px;">perm_identity</mat-icon>
                     <input id="name" matInput formControlName="name" [(ngModel)]="user.name" placeholder="Choose User Name" autocomplete="off">
@@ -22,7 +18,6 @@
                             UserName is required</mat-error>
                     </mat-error>
                 </span>
-
                 <mat-form-field style="margin-bottom: -1.25em;">
                     <mat-icon matPrefix style="margin-right: 20px;"> mail_outline</mat-icon>
                     <input type="email" matInput formControlName="email" [(ngModel)]="user.email" placeholder="Enter email " autocomplete="off" required>
