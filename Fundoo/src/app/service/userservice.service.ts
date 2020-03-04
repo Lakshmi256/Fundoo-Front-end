@@ -12,6 +12,7 @@ export class UserServiceService{
         headers:new HttpHeaders({'content-type':'application/json'})
     };
     constructor(private http:HttpClient){}
+
     registration(user: any): Observable<any> { 
         return this.http.post<any>(this.API_URL+environment.registerUrl,user,this.httpOptions);
     }

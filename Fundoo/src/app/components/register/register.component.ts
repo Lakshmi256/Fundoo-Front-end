@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,  FormBuilder, Validators } from '@angular/forms';
 import { UserServiceService } from 'src/app/service/userservice.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { UserModel } from 'src/app/model/user.model';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 @Component({
   selector: 'app-registration',
   templateUrl: './register.component.html',
@@ -11,6 +13,7 @@ import { UserModel } from 'src/app/model/user.model';
 })
 export class RegisterComponent implements OnInit {
 
+  
   showSpinner: boolean = false;
   user: UserModel = new UserModel();
   registerForm: FormGroup;
@@ -22,7 +25,6 @@ export class RegisterComponent implements OnInit {
 
   onRegisterSubmit() {
     this.showSpinner = true;
-    console.log("---------------------------------------");
     this.userservice.registration(this.registerForm.value).subscribe((user) => {
       this.router.navigate(['/login']);
       this.showMsg = true;
@@ -33,14 +35,12 @@ export class RegisterComponent implements OnInit {
       (error: any) => {
      
         this.matSnackBar.open('Bad Creaditial', 'ok', { duration: 4000 });
-        console.log(error)
       });
       if (this.registerForm.invalid) {
         return;
     }
   }
   ngOnInit() {
-    console.log("ngoninit---------------------------------------");
     
     this.registerForm = this.formBuilder.group({
       name: ['', [Validators.required]],

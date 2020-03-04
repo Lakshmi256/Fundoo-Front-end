@@ -1,5 +1,5 @@
 <div class="main-div">
-    <mat-card style="width: 18em;height: 10em;box-shadow:5px 5px 3px 3px;background: rgb(5, 126, 134);margin-top: -15em;">
+    <mat-card style="width:300px; box-shadow: 7px 5px 4px 5px; opacity: 0.8;">
         <div fxLayout=" row " fxLayoutAlign="center " style="font-size:50px;margin-bottom:45px ">
             <mat-card-title>
                 <span style="color:rgb(253, 122, 0); ">F</span>
@@ -7,22 +7,25 @@
                 <span style="color:rgb(255, 123, 0); ">N</span>
                 <span style="color:rgb(8, 193, 250); ">otes</span>
             </mat-card-title>
-            <form [formGroup]="registerForm" (ngSubmit)="registerForm.valid && onSubmit()" noval>
-                <mat-form-field style="margin-bottom: -1.25em;">
-                    <mat-icon matPrefix style="margin-right: 20px;">perm_identity</mat-icon>
-                    <input id="name" matInput formControlName="name" [(ngModel)]="user.name" placeholder="Choose User Name" autocomplete="off">
-                </mat-form-field>
-                <span style="font-size: 15px;margin-top: 10px;">
+            <form [formGroup]="registerForm" (ngSubmit)="registerForm.valid && onRegisterSubmit()" noval>
+                <div>
+                    <mat-form-field style="margin-bottom: -1.25em;">
+                        <mat-icon matPrefix style="margin-right: 20px;">perm_identity</mat-icon>
+                        <input id="name" matInput [(ngModel)]="user.name" placeholder="enter Name" autocomplete="off">
+                    </mat-form-field>
+                    <span style="font-size: 15px;margin-top: 10px;">
                     <mat-error *ngIf="f.name.touched && f.name.errors" class="invalid-feedback">
                         <mat-error *ngIf="f.firstname.errors.required">
-                            UserName is required</mat-error>
+                            Name is required</mat-error>
                     </mat-error>
                 </span>
-                <mat-form-field style="margin-bottom: -1.25em;">
-                    <mat-icon matPrefix style="margin-right: 20px;"> mail_outline</mat-icon>
-                    <input type="email" matInput formControlName="email" [(ngModel)]="user.email" placeholder="Enter email " autocomplete="off" required>
-                </mat-form-field>
-                <span style="font-size: 15px;margin-top: 10px;">
+                </div>
+                <div>
+                    <mat-form-field style="margin-bottom: -1.25em;">
+                        <mat-icon matPrefix style="margin-right: 20px;"> mail_outline</mat-icon>
+                        <input type="email" [(ngModel)]="user.email" placeholder="Enter email " autocomplete="off" required>
+                    </mat-form-field>
+                    <span style="font-size: 15px;margin-top: 10px;">
                     <mat-error *ngIf="f.email.touched && f.email.errors" class="invalid-feedback">
                         <mat-error *ngIf="f.email.errors.required">
                             Email is required</mat-error>
@@ -30,15 +33,18 @@
                             Please Enter valid Email</mat-error>
                     </mat-error>
                 </span>
+                </div>
 
-                <mat-form-field style="margin-bottom: -1.25em;">
-                    <mat-icon matPrefix style="margin-right: 20px;">lock</mat-icon>
-                    <input id="password" matInput formControlName="password" [(ngModel)]="user.password" placeholder="Enter password" [type]="hide ?'password':'text'" autocomplete="off" />
-                    <mat-icon matSuffix (click)="hide=!hide">
-                        {{hide? 'visibility' : 'visibility_off'}}
-                    </mat-icon>
-                </mat-form-field>
-                <span style="font-size: 15px;margin-top: 10px;">
+
+                <div>
+                    <mat-form-field style="margin-bottom: -1.25em;">
+                        <mat-icon matPrefix style="margin-right: 20px;">lock</mat-icon>
+                        <input id="password" matInput [(ngModel)]="user.password" placeholder="Enter password" [type]="hide ?'password':'text'" autocomplete="off" />
+                        <mat-icon matSuffix (click)="hide=!hide">
+                            {{hide? 'visibility' : 'visibility_off'}}
+                        </mat-icon>
+                    </mat-form-field>
+                    <span style="font-size: 15px;margin-top: 10px;">
                     <mat-error *ngIf="f.password.touched && f.password.errors" class="invalid-feedback">
                         <mat-error *ngIf="f.password.errors.required">
                             You must set Password</mat-error>
@@ -46,11 +52,13 @@
                             Password must be 6 character long</mat-error>
                     </mat-error>
                 </span>
-                <mat-form-field style="margin-bottom: -1.25em;">
-                    <mat-icon matPrefix style="margin-right: 20px;">phone_iphone</mat-icon>
-                    <input id="mobile_no" matInput formControlName="mobile_no" [(ngModel)]="user.mobile_no" placeholder="Enter Mobile No" autocomplete="off" required>
-                </mat-form-field>
-                <span style="font-size: 15px;margin-top: 10px;">
+                </div>
+                <div>
+                    <mat-form-field style="margin-bottom: -1.25em;">
+                        <mat-icon matPrefix style="margin-right: 20px;">phone_iphone</mat-icon>
+                        <input id="mobile_no" matInput [(ngModel)]="user.mobile_no" placeholder="Enter Mobile No" autocomplete="off" required>
+                    </mat-form-field>
+                    <span style="font-size: 15px;margin-top: 10px;">
                     <mat-error *ngIf="f.mobile_no.touched && f.mobile_no.errors" class="invalid-feedback">
                         <mat-error *ngIf="f.mobile_no.errors.required">
                             *phone number is required</mat-error>
@@ -58,10 +66,11 @@
                             *phone must be 10 digit</mat-error>
                     </mat-error>
                 </span>
+                </div>
                 <mat-card-actions align="end">
-                    <button style="font-size: 20px;font-weight: bold;color: blue;" [disabled]="!registerForm.valid" mat-button type="submit" class="divider">Register</button>
+                    <button style="font-size: 20px;font-weight: bold;color: blue;" [disabled]="!registerForm.valid" (click)="onRegisterSubmit()" mat-button type="submit" class="divider">Register</button>
                 </mat-card-actions>
-                <a href="#" style="align-content:space-around; padding-bottom: 10px; margin-bottom: 20px; font-size: 25px;">Already
+                <a href="http://localhost:4200/login" style="align-content:space-around; padding-bottom: 10px; margin-bottom: 20px; font-size: 25px;">Already
                     Register?</a>
 
             </form>

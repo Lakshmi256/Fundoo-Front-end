@@ -3,7 +3,7 @@ export const environment = {
   apiUrl:'http://localhost:8080/users',
 
 
-  registerUrl:'/register/',
+  registerUrl:'/register',
   loginUrl:'/login/'
 
 };
