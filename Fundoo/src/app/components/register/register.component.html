@@ -9,50 +9,67 @@
                 <span style="color:rgb(255, 123, 0); ">N</span>
                 <span style="color:rgb(8, 193, 250); ">otes</span>
             </mat-card-title>
-            <mat-card-content>
-                <div class="form-field ">
 
+            <form [formGroup]="registerForm" (ngSubmit)="registerForm.valid && onSubmit()" noval>
 
-                    <mat-form-field appearance="fill ">
-                        <mat-label>name </mat-label>
-                        <input type="text " matInput placeholder="ex: Lakshmi prasad " formControlName="name " />
-                    </mat-form-field>
-                </div>
+                <mat-form-field style="margin-bottom: -1.25em;">
+                    <mat-icon matPrefix style="margin-right: 20px;">perm_identity</mat-icon>
+                    <input id="name" matInput formControlName="name" [(ngModel)]="user.name" placeholder="Choose User Name" autocomplete="off">
+                </mat-form-field>
+                <span style="font-size: 15px;margin-top: 10px;">
+                    <mat-error *ngIf="f.name.touched && f.name.errors" class="invalid-feedback">
+                        <mat-error *ngIf="f.firstname.errors.required">
+                            UserName is required</mat-error>
+                    </mat-error>
+                </span>
 
+                <mat-form-field style="margin-bottom: -1.25em;">
+                    <mat-icon matPrefix style="margin-right: 20px;"> mail_outline</mat-icon>
+                    <input type="email" matInput formControlName="email" [(ngModel)]="user.email" placeholder="Enter email " autocomplete="off" required>
+                </mat-form-field>
+                <span style="font-size: 15px;margin-top: 10px;">
+                    <mat-error *ngIf="f.email.touched && f.email.errors" class="invalid-feedback">
+                        <mat-error *ngIf="f.email.errors.required">
+                            Email is required</mat-error>
+                        <mat-error *ngIf="f.email.errors.pattern">
+                            Please Enter valid Email</mat-error>
+                    </mat-error>
+                </span>
 
-                <div class="form-field ">
-                    <mat-form-field appearance="outline ">
+                <mat-form-field style="margin-bottom: -1.25em;">
+                    <mat-icon matPrefix style="margin-right: 20px;">lock</mat-icon>
+                    <input id="password" matInput formControlName="password" [(ngModel)]="user.password" placeholder="Enter password" [type]="hide ?'password':'text'" autocomplete="off" />
+                    <mat-icon matSuffix (click)="hide=!hide">
+                        {{hide? 'visibility' : 'visibility_off'}}
+                    </mat-icon>
+                </mat-form-field>
+                <span style="font-size: 15px;margin-top: 10px;">
+                    <mat-error *ngIf="f.password.touched && f.password.errors" class="invalid-feedback">
+                        <mat-error *ngIf="f.password.errors.required">
+                            You must set Password</mat-error>
+                        <mat-error *ngIf="f.password.errors && !f.password.errors.required">
+                            Password must be 6 character long</mat-error>
+                    </mat-error>
+                </span>
+                <mat-form-field style="margin-bottom: -1.25em;">
+                    <mat-icon matPrefix style="margin-right: 20px;">phone_iphone</mat-icon>
+                    <input id="mobile_no" matInput formControlName="mobile_no" [(ngModel)]="user.mobile_no" placeholder="Enter Mobile No" autocomplete="off" required>
+                </mat-form-field>
+                <span style="font-size: 15px;margin-top: 10px;">
+                    <mat-error *ngIf="f.mobile_no.touched && f.mobile_no.errors" class="invalid-feedback">
+                        <mat-error *ngIf="f.mobile_no.errors.required">
+                            *phone number is required</mat-error>
+                        <mat-error *ngIf="!f.mobile_no.errors.required && f.mobile_no.errors">
+                            *phone must be 10 digit</mat-error>
+                    </mat-error>
+                </span>
+                <mat-card-actions align="end">
+                    <button style="font-size: 20px;font-weight: bold;color: blue;" [disabled]="!registerForm.valid" mat-button type="submit" class="divider">Register</button>
+                </mat-card-actions>
+                <a href="#" style="align-content:space-around; padding-bottom: 10px; margin-bottom: 20px; font-size: 25px;">Already
+                    Register?</a>
 
-                        <mat-label>email </mat-label>
-                        <input type="text " matInput placeholder="ex:lp@gmail.com " formControlName="email ">
-                    </mat-form-field>
-
-                </div>
-
-                <div class="form-field ">
-                    <mat-form-field appearance="outline ">
-                        <mat-label>phoneno </mat-label>
-                        <input type="text " matInput placeholder="ex:9625140251 " formControlName="mobile ">
-
-                    </mat-form-field>
-
-                </div>
-
-
-                <div class="form-field ">
-                    <mat-form-field>
-                        <mat-label>password</mat-label>
-                        <input type="password " matInput placeholder="your password " formControlName="password ">
-
-                    </mat-form-field>
-                </div>
-
-                <div class="button ">
-                    <button mat-raised-button style='margin-right:10px;margin-top: 15px; '>Register</button>
-
-                    <a href=" http://localhost:4200/login "><button mat-raised-button (click)="onSubmit(registerForm)" style='margin-right:-50px;margin-top: 15px; '>forgotPassword</button></a>
-                </div>
-            </mat-card-content>
+            </form>
         </div>
 
     </mat-card>

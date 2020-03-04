@@ -4,6 +4,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 
+import {MatIconModule} from '@angular/material/icon';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -24,6 +25,7 @@ import { HttpClient } from '@angular/common/http';
     MatFormFieldModule,
     MatCardModule,
     MatButtonModule,
+    MatIconModule
   
   ],
   providers: [HttpClient],
