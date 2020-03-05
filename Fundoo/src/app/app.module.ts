@@ -11,8 +11,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClient, HttpHandler, HttpClientModule } from '@angular/common/http';
+import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
 
 
 
@@ -20,7 +22,8 @@ import { HttpClient, HttpHandler, HttpClientModule } from '@angular/common/http'
   declarations: [
     AppComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    ForgotpasswordComponent
   
   ],
   imports: [

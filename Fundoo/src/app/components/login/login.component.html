@@ -1,0 +1,59 @@
+<div class="main-div">
+    <mat-card style="width:300px; box-shadow: 7px 5px 6px 5px; opacity: 0.8;">
+        <div fxLayout=" row " fxLayoutAlign="center " style="font-size:90px;margin-bottom:30px ">
+            <mat-card-title>
+                <span style="color:rgb(255, 123, 0); ">F</span>
+                <span style="color:rgb(8, 193, 250); ">undoo</span>
+                <span style="color:rgb(255, 123, 0); ">N</span>
+                <span style="color:rgb(8, 193, 250); ">otes</span>
+                <br>
+                <br>
+                <span style="color:rgb(8, 193, 250); ">Login</span>
+            </mat-card-title>
+            <form [formGroup]="loginForm" (ngSubmit)="loginForm.valid && onloginSubmit()" noval>
+
+                <div>
+                    <mat-form-field style="margin-bottom: -1.25em; ">
+                        <mat-icon matPrefix style="margin-right: 20px; "> mail_outline</mat-icon>
+                        <input type="email " formControlName="email" [(ngModel)]=" user.email " placeholder="Enter email " autocomplete="off " required>
+                    </mat-form-field>
+                    <span style="font-size: 15px;margin-top: 10px; ">
+                    <mat-error *ngIf="f.email.touched && f.email.errors " class="invalid-feedback ">
+                        <mat-error *ngIf="f.email.errors.required ">
+                            Email is required</mat-error>
+                        <mat-error *ngIf="f.email.errors.pattern ">
+                            Please Enter valid Email</mat-error>
+                    </mat-error>
+                </span>
+                </div>
+
+
+                <div>
+                    <mat-form-field style="margin-bottom: -1.25em; ">
+                        <mat-icon matPrefix style="margin-right: 20px; ">lock</mat-icon>
+                        <input id="password " matInput formControlName="password" [(ngModel)]=" user.password " placeholder="Enter password " [type]="hide ? 'password': 'text' " autocomplete="off " />
+                        <mat-icon matSuffix (click)="hide=!hide ">
+                            {{hide? 'visibility' : 'visibility_off'}}
+                        </mat-icon>
+                    </mat-form-field>
+                    <span style="font-size: 15px;margin-top: 10px; ">
+                    <mat-error *ngIf="f.password.touched && f.password.errors " class="invalid-feedback ">
+                        <mat-error *ngIf="f.password.errors.required ">
+                            You must enter Password</mat-error>
+                        <mat-error *ngIf="f.password.errors && !f.password.errors.required ">
+                            Password must be 6 character long</mat-error>
+                    </mat-error>
+                </span>
+                </div>
+                <mat-card-actions align="end ">
+                    <button style="font-size: 20px;font-weight: bold;color: blue; " [disabled]="!loginForm.valid " (click)="onloginSubmit() " mat-button type="submit " class="divider ">LOGIN</button>
+                </mat-card-actions>
+                <a href="http://localhost:4200/register " style="align-content:space-around; padding-bottom: 10px; margin-bottom: 20px; font-size: 17px; ">Did not 
+                    Register?</a>
+                <br> <a href="http://localhost:4200/forgotpassword " style="align-content:space-around; padding-bottom: 10px; margin-bottom: 20px; font-size: 17px; margin-right: 3em; ">forgot password?</a>
+
+            </form>
+        </div>
+
+    </mat-card>
+</div>

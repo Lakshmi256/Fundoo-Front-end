@@ -4,7 +4,7 @@ export const environment = {
 
 
   registerUrl:'/register',
-  loginUrl:'/login/'
+  loginUrl:'/login'
 
 };
 

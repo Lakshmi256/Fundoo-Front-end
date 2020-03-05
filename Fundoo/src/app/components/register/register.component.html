@@ -6,6 +6,10 @@
                 <span style="color:rgb(8, 193, 250); ">undoo</span>
                 <span style="color:rgb(255, 123, 0); ">N</span>
                 <span style="color:rgb(8, 193, 250); ">otes</span>
+                <br>
+                <br>
+                <span style="color:rgb(8, 193, 250); ">Register</span>
+
             </mat-card-title>
             <form [formGroup]="registerForm" (ngSubmit)="registerForm.valid && onRegisterSubmit()" noval>
                 <div>
@@ -70,7 +74,7 @@
                 <mat-card-actions align="end ">
                     <button style="font-size: 20px;font-weight: bold;color: blue; " [disabled]="!registerForm.valid " (click)="onRegisterSubmit() " mat-button type="submit " class="divider ">Register</button>
                 </mat-card-actions>
-                <a href="http://localhost:4200/login " style="align-content:space-around; padding-bottom: 10px; margin-bottom: 20px; font-size: 25px; ">Already
+                <a href="http://localhost:4200/login " style="align-content:space-around; padding-bottom: 10px; margin-bottom: 20px; font-size: 20px; ">Already
                     Register?</a>
 
             </form>
