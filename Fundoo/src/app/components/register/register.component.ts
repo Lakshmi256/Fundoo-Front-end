@@ -29,7 +29,7 @@ export class RegisterComponent implements OnInit {
       this.router.navigate(['/login']);
       this.showMsg = true;
       this.submitted = true;
-      this.matSnackBar.open('Registration Successfull Please Verify Account Before Login', 'ok', { duration: 4000 });
+      this.matSnackBar.open('Registration Successfull ', 'ok', { duration: 4000 });
   
     },
       (error: any) => {
@@ -47,7 +47,7 @@ export class RegisterComponent implements OnInit {
       email: ['', [Validators.required, Validators.pattern("^[a-z0-9.%-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
       password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(16)]],
       
-      mobile_no: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
+      mobileNumber: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
       
       
     },
