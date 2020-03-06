@@ -27,8 +27,7 @@ export class ForgotpasswordComponent implements OnInit {
     this.showSpinner = true;
     this.userservice.forgotPassword(this.forgotPasswordForm.value).subscribe((user) => {
       this.router.navigate(['/login']);
-      this.showMsg = true;
-      this.submitted = true;
+  
       this.matSnackBar.open('reset password link sent Successfull ', 'ok', { duration: 4000 });
   
     },

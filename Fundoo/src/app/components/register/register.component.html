@@ -19,8 +19,7 @@
                     </mat-form-field>
                     <span style="font-size: 15px;margin-top: 10px; ">
                     <mat-error *ngIf="f.name.touched && f.name.errors " class="invalid-feedback ">
-                        <mat-error *ngIf="f.firstname.errors.required ">
-                            Name is required</mat-error>
+                        <mat-error *ngIf="f.name.errors.required ">Name is required</mat-error>
                     </mat-error>
                 </span>
                 </div>
