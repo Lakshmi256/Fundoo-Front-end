@@ -23,7 +23,7 @@ export class UserServiceService{
         console.log(this.API_URL)
     }
      forgotPassword(user: any): Observable<any> { 
-        return this.http.post<any>(this.API_URL+environment.forgotpassurl,user,this.httpOptions);
+        return this.http.post<any>(this.API_URL+environment.forgotpassurl+user.email,this.httpOptions);
         console.log(this.API_URL)
     }
 
