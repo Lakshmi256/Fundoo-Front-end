@@ -14,7 +14,9 @@
 
                 <div>
                     <mat-form-field style="margin-bottom: -1.25em; ">
-                        <input type="email " formControlName="email" [(ngModel)]=" user.email " placeholder="Enter email " autocomplete="off " required>
+                        <mat-icon aria-hidden="false" aria-label="Example home icon">email
+                            <input type="email " formControlName="email" [(ngModel)]=" user.email " placeholder="Enter email " autocomplete="off " required>
+                        </mat-icon>
                     </mat-form-field>
                     <span style="font-size: 15px;margin-top: 10px; ">
                     <mat-error *ngIf="f.email.touched && f.email.errors " class="invalid-feedback ">
@@ -26,12 +28,13 @@
                 </span>
                 </div>
 
-
                 <div>
                     <mat-form-field style="margin-bottom: -1.25em; ">
-                        <input id="password " matInput formControlName="password" [(ngModel)]=" user.password " placeholder="Enter password " [type]="hide ? 'password': 'text' " autocomplete="off " />
-                        <mat-icon matSuffix (click)="hide=!hide ">
-                            {{hide? 'visibility' : 'visibility_off'}}
+                        <mat-icon aria-hidden="false" aria-label="Example home icon">lock
+                            <input id="password " matInput formControlName="password" [(ngModel)]=" user.password " placeholder="Enter password " [type]="hide ? 'password': 'text' " autocomplete="off " />
+                            <mat-icon matSuffix (click)="hide=!hide ">
+                                {{hide? 'visibility' : 'visibility_off'}}
+                            </mat-icon>
                         </mat-icon>
                     </mat-form-field>
                     <span style="font-size: 15px;margin-top: 10px; ">
