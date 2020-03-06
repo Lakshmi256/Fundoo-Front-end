@@ -14,7 +14,6 @@
             <form [formGroup]="registerForm" (ngSubmit)="registerForm.valid && onRegisterSubmit()" noval>
                 <div>
                     <mat-form-field style="margin-bottom: -1.25em;">
-                        <mat-icon matPrefix style="margin-right: 20px;">perm_identity</mat-icon>
                         <input id="name" matInput formControlName="name" [(ngModel)]=" user.name " placeholder="enter Name " autocomplete="off ">
                     </mat-form-field>
                     <span style="font-size: 15px;margin-top: 10px; ">
@@ -25,7 +24,6 @@
                 </div>
                 <div>
                     <mat-form-field style="margin-bottom: -1.25em; ">
-                        <mat-icon matPrefix style="margin-right: 20px; "> mail_outline</mat-icon>
                         <input type="email " formControlName="email" [(ngModel)]=" user.email " placeholder="Enter email " autocomplete="off " required>
                     </mat-form-field>
                     <span style="font-size: 15px;margin-top: 10px; ">
@@ -41,7 +39,6 @@
 
                 <div>
                     <mat-form-field style="margin-bottom: -1.25em; ">
-                        <mat-icon matPrefix style="margin-right: 20px; ">lock</mat-icon>
                         <input id="password " matInput formControlName="password" [(ngModel)]=" user.password " placeholder="Enter password " [type]="hide ? 'password': 'text' " autocomplete="off " />
                         <mat-icon matSuffix (click)="hide=!hide ">
                             {{hide? 'visibility' : 'visibility_off'}}
@@ -58,7 +55,6 @@
                 </div>
                 <div>
                     <mat-form-field style="margin-bottom: -1.25em; ">
-                        <mat-icon matPrefix style="margin-right: 20px; ">phone_iphone</mat-icon>
                         <input id="mobileNumber " matInput formControlName="mobileNumber" [(ngModel)]=" user.mobileNumber " placeholder="Enter Mobile No " autocomplete="off " required>
                     </mat-form-field>
                     <span style="font-size: 15px;margin-top: 10px; ">
