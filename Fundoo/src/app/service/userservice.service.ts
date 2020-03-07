@@ -2,6 +2,7 @@ import{Injectable} from '@angular/core';
 import{HttpHeaders,HttpClient, HttpResponse} from '@angular/common/http';
 import{environment} from 'src/environments/environment';
 import{Observable} from 'rxjs';
+import { tokenName } from '@angular/compiler';
 
 @Injectable({
     providedIn:'root'
@@ -28,7 +29,7 @@ export class UserServiceService{
         console.log(this.API_URL)
     }
     resetPassword(user: any): Observable<any> { 
-        return this.http.post<any>(this.API_URL+environment.resetPassword,user,this.httpOptions);
+        return this.http.post<any>(this.API_URL+environment.resetPassword,user,{headers:new HttpHeaders().set('token',sessionStorage.token)});
         console.log(this.API_URL)
     }
     
