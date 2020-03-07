@@ -15,7 +15,7 @@
                 <div>
                     <mat-form-field style="margin-bottom: -1.25em;">
                         <mat-icon aria-hidden="false" aria-label="Example home icon">home
-                            <input id="name" matInput formControlName="name" [(ngModel)]=" user.name " placeholder="enter Name " autocomplete="off ">
+                            <input id="name" matInput formControlName="name" placeholder="enter Name " autocomplete="off ">
                         </mat-icon>
                     </mat-form-field>
                     <span style="font-size: 15px;margin-top: 10px; ">
@@ -44,7 +44,7 @@
                 <div>
                     <mat-form-field style="margin-bottom: -1.25em; ">
                         <mat-icon aria-hidden="false" aria-label="Example home icon">lock
-                            <input id="password " matInput formControlName="password" [(ngModel)]=" user.password " placeholder="Enter password " [type]="hide ? 'password': 'text' " autocomplete="off " />
+                            <input id="password " matInput [(ngModel)]=" user.password " placeholder="Enter password " [type]="hide ? 'password': 'text' " autocomplete="off " />
                             <mat-icon matSuffix (click)="hide=!hide ">
                                 {{hide? 'visibility' : 'visibility_off'}}
                             </mat-icon>
