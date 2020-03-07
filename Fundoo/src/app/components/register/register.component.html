@@ -15,7 +15,7 @@
                 <div>
                     <mat-form-field style="margin-bottom: -1.25em;">
                         <mat-icon aria-hidden="false" aria-label="Example home icon">home
-                            <input id="name" matInput formControlName="name" placeholder="enter Name " autocomplete="off ">
+                            <input id="name" matInput formControlName="name" [(ngModel)]=" user.name " placeholder="enter Name " autocomplete="off ">
                         </mat-icon>
                     </mat-form-field>
                     <span style="font-size: 15px;margin-top: 10px; ">
@@ -44,7 +44,7 @@
                 <div>
                     <mat-form-field style="margin-bottom: -1.25em; ">
                         <mat-icon aria-hidden="false" aria-label="Example home icon">lock
-                            <input id="password " matInput [(ngModel)]=" user.password " placeholder="Enter password " [type]="hide ? 'password': 'text' " autocomplete="off " />
+                            <input id="password " matInput formControlName="password" [(ngModel)]=" user.password " placeholder="Enter password " [type]="hide ? 'password': 'text' " autocomplete="off " />
                             <mat-icon matSuffix (click)="hide=!hide ">
                                 {{hide? 'visibility' : 'visibility_off'}}
                             </mat-icon>
@@ -78,7 +78,7 @@
                 </span>
                 </div>
                 <mat-card-actions align="end ">
-                    <button style="font-size: 20px;font-weight: bold;color: rgb(10, 10, 10); " [disabled]="!registerForm.valid " (click)="onRegisterSubmit() " mat-button type="submit " class="divider ">Register</button>
+                    <button style="font-size: 20px;font-weight: bold;color: rgb(10, 10, 10); " [disabled]="!registerForm.valid " mat-button type="submit " class="divider ">Register</button>
 
                     <a href="http://localhost:4200/login " style="align-content:space-around; padding-bottom: 10px; margin-bottom: 20px; font-size: 20px; ">Already
                     Register?</a>

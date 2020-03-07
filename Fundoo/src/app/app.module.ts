@@ -19,6 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClient, HttpHandler, HttpClientModule } from '@angular/common/http';
 import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 
 
 
@@ -28,7 +29,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     RegisterComponent,
     LoginComponent,
     ForgotpasswordComponent,
-    DashboardComponent
+    DashboardComponent,
+    ResetpasswordComponent
   
   ],
   imports: [
