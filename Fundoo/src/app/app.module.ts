@@ -20,6 +20,7 @@ import { HttpClient, HttpHandler, HttpClientModule } from '@angular/common/http'
 import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
 
 
 
@@ -30,7 +31,8 @@ import { ResetpasswordComponent } from './components/resetpassword/resetpassword
     LoginComponent,
     ForgotpasswordComponent,
     DashboardComponent,
-    ResetpasswordComponent
+    ResetpasswordComponent,
+    SidenavComponent
   
   ],
   imports: [
