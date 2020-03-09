@@ -30,7 +30,7 @@ export class UserServiceService{
         console.log(this.API_URL)
     }
     resetPassword(user: any): Observable<any> { 
-        return this.httpservice.post(this.API_URL+environment.resetPassword,user,{headers:new HttpHeaders().set('token',sessionStorage.token)});
+        return this.httpservice.put(this.API_URL+environment.resetPassword,user,{headers:new HttpHeaders().get(localStorage.token)});
         console.log(this.API_URL)
     }
     
