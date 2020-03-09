@@ -5,6 +5,7 @@ import { LoginComponent } from './components/login/login.component';
 import{ ForgotpasswordComponent} from './components/forgotpassword/forgotpassword.component'
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
 
 
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'forgotpassword',component: ForgotpasswordComponent},
   {path: 'dashboard',component:DashboardComponent},
-  {path: 'resetpassword',component:ResetpasswordComponent}
+  {path: 'resetpassword',component:ResetpasswordComponent},
+  {path:'sidenav',component:SidenavComponent}
 ];
 
 @NgModule({

@@ -6,6 +6,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 
 
@@ -48,6 +49,7 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
     HttpClientModule,
     MatSnackBarModule,
     MatSidenavModule,
+    MatToolbarModule
     
   ],
   providers: [HttpClient],
