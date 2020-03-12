@@ -22,6 +22,7 @@ import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassw
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { NotesComponent } from './notes/notes.component';
 
 
 
@@ -33,7 +34,8 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
     ForgotpasswordComponent,
     DashboardComponent,
     ResetpasswordComponent,
-    SidenavComponent
+    SidenavComponent,
+    NotesComponent
   
   ],
   imports: [
