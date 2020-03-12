@@ -21,8 +21,8 @@ import { HttpClient, HttpHandler, HttpClientModule } from '@angular/common/http'
 import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
-import { SidenavComponent } from './components/sidenav/sidenav.component';
-import { NotesComponent } from './notes/notes.component';
+import { CreatenoteComponent } from './components/createnote/createnote.component';
+import { NotesComponent } from './components/notes/notes.component';
 
 
 
@@ -34,8 +34,8 @@ import { NotesComponent } from './notes/notes.component';
     ForgotpasswordComponent,
     DashboardComponent,
     ResetpasswordComponent,
-    SidenavComponent,
-    NotesComponent
+    CreatenoteComponent,
+    NotesComponent,
   
   ],
   imports: [
