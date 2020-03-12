@@ -1,5 +1,5 @@
 import{Injectable} from '@angular/core';
-import{HttpHeaders,HttpClient, HttpResponse} from '@angular/common/http';
+import{HttpHeaders} from '@angular/common/http';
 import{environment} from 'src/environments/environment';
 import{Observable, from} from 'rxjs';
 import { tokenName } from '@angular/compiler';
@@ -14,7 +14,7 @@ export class UserServiceService{
         headers:new HttpHeaders({'content-type':'application/json'})
         
     };
-    constructor(private http:HttpClient,private httpservice:HttpService){}
+    constructor(private httpservice:HttpService){}
 
     registration(user: any): Observable<any> { 
         return this.httpservice.post(this.API_URL+environment.registerUrl,user,this.httpOptions);
