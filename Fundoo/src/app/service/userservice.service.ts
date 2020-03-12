@@ -18,7 +18,7 @@ export class UserServiceService{
 
     registration(user: any): Observable<any> { 
         return this.httpservice.post(this.API_URL+environment.registerUrl,user,this.httpOptions);
-        console.log(this.API_URL)
+        
     }
 
     login(user: any): Observable<any> { 
@@ -27,11 +27,9 @@ export class UserServiceService{
     }
      forgotPassword(user: any): Observable<any> { 
         return this.httpservice.post(this.API_URL+environment.forgotpassurl,user,this.httpOptions);
-        console.log(this.API_URL)
     }
     resetPassword(user: any): Observable<any> { 
         return this.httpservice.put(this.API_URL+environment.resetPassword,user,{headers:new HttpHeaders().get(localStorage.token)});
-        console.log(this.API_URL)
     }
     
 
