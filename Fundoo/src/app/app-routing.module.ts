@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import{ ForgotpasswordComponent} from './components/forgotpassword/forgotpassword.component'
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import{NotesComponent} from'./components/notes/notes.component';
 import { CreatenoteComponent } from './components/createnote/createnote.component';
+import { DisplaynotesComponent } from './components/displaynotes/displaynotes.component';
+import { RegisterComponent } from './components/register/register.component';
 
 
 const routes: Routes = [
@@ -20,7 +21,10 @@ const routes: Routes = [
   children:[
   {path:'',component:NotesComponent},
   {path:"notes",component:NotesComponent},
-  {path:"createnote",component:CreatenoteComponent}
+  {path:"createnote",component:CreatenoteComponent},
+  {path:'displaynotes',component:DisplaynotesComponent},
+
+
 ]},
 
 ];
