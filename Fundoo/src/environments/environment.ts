@@ -8,10 +8,19 @@ export const environment = {
   loginUrl:'/login',
   forgotpassurl:"/forgotpassword/",
   resetPassword:"/updatePassword",
+
+
   createNote:"/create",
   updateNote:'/update',
   pinNote:'/pin',
   getAllNotes:'/getallnotes',
+  deleteNote:'/delete',
+  archieveNote:'/archieve',
+  getPinNote:'/getPinned',
+  getArchieveNote:'/getArchieve',
+  getTrashNotes:'/gettrashed',
+
+
 
 
 };

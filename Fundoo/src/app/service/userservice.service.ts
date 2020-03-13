@@ -2,7 +2,6 @@ import{Injectable}  from '@angular/core';
 import{HttpHeaders} from '@angular/common/http';
 import{environment} from 'src/environments/environment';
 import{Observable, from} from 'rxjs';
-import{ tokenName } from '@angular/compiler';
 import{HttpService} from './httpservice.service'
 
 @Injectable({
