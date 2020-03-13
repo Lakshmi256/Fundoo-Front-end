@@ -4,7 +4,6 @@ import { UserServiceService } from 'src/app/service/userservice.service';
 import { Router } from '@angular/router';
 import { UserModel } from 'src/app/model/user.model';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-registration',

@@ -23,6 +23,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import { CreatenoteComponent } from './components/createnote/createnote.component';
 import { NotesComponent } from './components/notes/notes.component';
+import { DisplaynotesComponent } from './components/displaynotes/displaynotes.component';
 
 
 
@@ -36,6 +37,7 @@ import { NotesComponent } from './components/notes/notes.component';
     ResetpasswordComponent,
     CreatenoteComponent,
     NotesComponent,
+    DisplaynotesComponent,
   
   ],
   imports: [
