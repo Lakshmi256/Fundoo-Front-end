@@ -7,7 +7,7 @@ export const environment = {
   registerUrl:'/register',
   loginUrl:'/login',
   forgotpassurl:"/forgotpassword/",
-  resetPassword:"/updatePassword",
+  resetPassword:"/updatePassword/",
 
 
   createNote:"/create",

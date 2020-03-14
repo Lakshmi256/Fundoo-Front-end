@@ -20,8 +20,8 @@ const routes: Routes = [
   {path: 'dashboard',component:DashboardComponent,
   children:[
   {path:'',component:NotesComponent},
-  {path:"notes",component:NotesComponent},
-  {path:"createnote",component:CreatenoteComponent},
+   {path:'notes',component:NotesComponent},
+  {path:'createnote',component:CreatenoteComponent},
   {path:'displaynotes',component:DisplaynotesComponent},
 
 
