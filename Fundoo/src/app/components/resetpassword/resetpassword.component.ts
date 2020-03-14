@@ -25,6 +25,7 @@ export class ResetpasswordComponent implements OnInit {
     this.showSpinner = true;
     this.userservice.resetPassword(this.resetPasswordForm.value).subscribe((user) => {
       this.router.navigate(['/login']);
+      localStorage.clear
       this.showMsg = true;
       this.submitted = true;
       this.matSnackBar.open('password changed Successfull ', 'ok', { duration: 4000 });

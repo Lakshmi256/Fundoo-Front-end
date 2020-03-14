@@ -28,7 +28,7 @@ export class UserServiceService{
         return this.httpservice.post(this.API_URL+environment.forgotpassurl,user,this.httpOptions);
     }
     resetPassword(user: any): Observable<any> { 
-        return this.httpservice.put(this.API_URL+environment.resetPassword,user,{headers:new HttpHeaders().get(localStorage.token)});
+        return this.httpservice.put(this.API_URL+environment.resetPassword,user,{headers:new HttpHeaders({"token":localStorage.token})});
     }
     
 

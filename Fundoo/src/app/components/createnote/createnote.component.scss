@@ -1,6 +1,31 @@
 .main {
-    display: initial;
+    display: flex;
     justify-content: center;
     width: 100%;
-    align-self: flex-start;
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
+.input {
+    outline: black;
+}
+
+.searchBar {
+    border: none;
+    outline: none;
+}
+
+.iconlist {
+    margin-top: 3%;
+}
+
+.close:hover {
+    background-color: rgb(196, 178, 161);
+    outline: none;
+}
+
+.close:active {
+    border: none;
+    outline: none;
+    border-radius: 10px 10px 10px 10px;
 }

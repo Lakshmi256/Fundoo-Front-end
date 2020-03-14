@@ -17,7 +17,7 @@ export class NoteServiceService{
     constructor(private httpservice:HttpService){}
 
     createNote(user: any): Observable<any> { 
-        return this.httpservice.post(this.API_URL+environment.createNote,user,{headers:new HttpHeaders().get(this.token)});
+        return this.httpservice.post(this.API_URL+environment.createNote,user,{headers:new HttpHeaders({'token':this.token})});
         
     }
     updateNote(user: any): Observable<any> { 
