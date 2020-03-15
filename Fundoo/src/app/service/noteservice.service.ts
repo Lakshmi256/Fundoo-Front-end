@@ -8,7 +8,7 @@ import{HttpService} from './httpservice.service'
     providedIn:'root'
 })
 export class NoteServiceService{
-    private API_URL=environment.apiUrl;
+    private API_URL=environment.notesUrl;
     private token=(localStorage.token)
     private httpOptions ={
         headers:new HttpHeaders({'content-type':'application/json'})

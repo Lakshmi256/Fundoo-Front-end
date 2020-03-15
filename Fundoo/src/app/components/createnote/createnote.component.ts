@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { NoteServiceService } from 'src/app/service/noteservice.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Note } from 'src/app/model/note';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-createnote',
@@ -14,18 +15,24 @@ export class CreatenoteComponent implements OnInit {
   popup:boolean=false;
   note:Note = new Note();
   noteId:Note[];
-  Token=localStorage.getItem('token');
+  createNoteForm:FormGroup;
+ 
   isPinned:boolean;
 
-  constructor(private router:Router,private noteservice: NoteServiceService, private snackbar:MatSnackBar ) { }
+  constructor(private formBuilder: FormBuilder,private router:Router,private noteservice: NoteServiceService, private snackbar:MatSnackBar ) { }
   
   ngOnInit() {
+    this.createNoteForm = this.formBuilder.group({
+      title:[''],
+      description:[''],
+    }
+    )
   }
 
   onSubmit() {
-    console.log()
+    console.log(this.createNoteForm.value)
     {
-      this.noteservice.createNote(this.note).subscribe(notes=> {
+      this.noteservice.createNote(this.createNoteForm.value).subscribe(notes=> {
         this.note = new Note();
         console.log(this.note);
         this.snackbar.open('Note Created', 'OK', {duration:3000});
