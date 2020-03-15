@@ -26,6 +26,7 @@ import { ResetpasswordComponent } from './components/resetpassword/resetpassword
 import { CreatenoteComponent } from './components/createnote/createnote.component';
 import { NotesComponent } from './components/notes/notes.component';
 import { DisplaynotesComponent } from './components/displaynotes/displaynotes.component';
+import { PinNotesComponent } from './components/pin-notes/pin-notes.component';
 
 
 
@@ -40,6 +41,7 @@ import { DisplaynotesComponent } from './components/displaynotes/displaynotes.co
     CreatenoteComponent,
     NotesComponent,
     DisplaynotesComponent,
+    PinNotesComponent,
   
   ],
   imports: [
