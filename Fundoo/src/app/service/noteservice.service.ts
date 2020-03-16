@@ -16,6 +16,9 @@ export class NoteServiceService{
     };
     constructor(private httpservice:HttpService){}
 
+    get autoRefresh$() {
+        return this.autoRefresh$;
+      }
     createNote(user: any): Observable<any> { 
         return this.httpservice.post(this.API_URL+environment.createNote,user,{headers:new HttpHeaders({'token':this.token})});
         
@@ -26,6 +29,14 @@ export class NoteServiceService{
     }
     getAllNote(): Observable<any> { 
         return this.httpservice.get(this.API_URL+environment.updateNote,{headers:new HttpHeaders().get(this.token)});
+        
+    }
+    getPinnedAllNote(): Observable<any> { 
+        return this.httpservice.get(this.API_URL+environment.updateNote,{headers:new HttpHeaders().get(this.token)});
+        
+    }
+    pinNote(note:any): Observable<any> { 
+        return this.httpservice.get(this.API_URL+environment.pinNote+note.id,{headers:new HttpHeaders().get(this.token)});
         
     }
 }

@@ -14,7 +14,8 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
   }
   notes(){
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['/dashboard/notes']);
+    
   }
 
 }

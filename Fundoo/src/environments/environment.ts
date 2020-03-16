@@ -12,7 +12,7 @@ export const environment = {
 
   createNote:"/create",
   updateNote:'/update',
-  pinNote:'/pin',
+  pinNote:'/pin/',
   getAllNotes:'/getallnotes',
   deleteNote:'/delete',
   archieveNote:'/archieve',
