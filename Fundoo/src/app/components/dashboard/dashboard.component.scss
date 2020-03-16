@@ -3,10 +3,6 @@
     width: 100%
 }
 
-.docs-navbar-header {
-    box-shadow: 1px, 2px, 3px, 2px;
-}
-
 .sideNavIcon {
     display: flex;
     align-items: center;
@@ -42,7 +38,7 @@
     background-color: #fff;
     border-radius: 7px;
     height: 44px;
-    width: 37em;
+    width: 39em;
 }
 
 .input {
@@ -58,7 +54,7 @@
 
 .example-container {
     width: -400px;
-    height: 100px;
+    height: 100vh;
 }
 
 .example-sidenav-content {
@@ -80,8 +76,7 @@
 .notesdiv {
     display: grid;
     padding: 10px;
-    border-bottom: thick double #ffffff;
-    margin-top: initial;
+    border-bottom: thick double #bfc1c2;
 }
 
 .lebelmain {
