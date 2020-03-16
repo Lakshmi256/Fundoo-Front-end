@@ -56,9 +56,10 @@
 
 
 <div class="sidenavdiv" style="background-color: cornsilk;">
-    <mat-drawer #drawer class="example-sidenav" mode="side">
 
-        <mat-drawer-container class="example-container" autosize>
+
+    <mat-drawer-container class="example-container" autosize>
+        <mat-drawer #drawer class="example-sidenav" mode="side">
             <div class="maindiv">
 
 
@@ -70,9 +71,9 @@
             </button><br>
                 </div>
             </div>
-        </mat-drawer-container>
-    </mat-drawer>
 
+        </mat-drawer>
+    </mat-drawer-container>
 </div>
 <div>
     <router-outlet></router-outlet>

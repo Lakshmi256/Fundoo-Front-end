@@ -58,9 +58,7 @@
 
 .example-container {
     width: -400px;
-    height: 100vh;
-    margin-top: 4%;
-    margin-bottom: 4%;
+    height: 100px;
 }
 
 .example-sidenav-content {
@@ -82,7 +80,8 @@
 .notesdiv {
     display: grid;
     padding: 10px;
-    border-bottom: thick double #bfc1c2;
+    border-bottom: thick double #ffffff;
+    margin-top: initial;
 }
 
 .lebelmain {

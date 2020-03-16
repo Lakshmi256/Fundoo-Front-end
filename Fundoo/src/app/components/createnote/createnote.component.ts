@@ -34,7 +34,7 @@ export class CreatenoteComponent implements OnInit {
     {
       this.noteservice.createNote(this.createNoteForm.value).subscribe(notes=> {
         this.note = new Note();
-    
+    this.router.navigate(['/dashboard/notes']);
         this.snackbar.open('Note Created', 'OK', {duration:3000});
       },
       (error: any) => {
