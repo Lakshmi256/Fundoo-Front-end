@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Inject } from '@angular/core';
+import { Note } from 'src/app/model/note';
+import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from '@angular/material/dialog';
+import { DomSanitizer } from '@angular/platform-browser';
+import { NoteServiceService } from 'src/app/service/noteservice.service';
+import { MatSnackBarModule, MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-pin-notes',
@@ -7,9 +12,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PinNotesComponent implements OnInit {
 
-  constructor() { }
+  [x: string]: any;
+  @Input() note: Note;
+  isPinned: boolean;
+  Token=localStorage.getItem('token');
 
-  ngOnInit(): void {
+  constructor(@Inject(MAT_DIALOG_DATA) public notes: Note, private noteService: NoteServiceService, private snackBar: MatSnackBarModule,
+  public dialog: MatDialog, private sanitizer: DomSanitizer, private matSnackBar: MatSnackBar) { }
+
+  ngOnInit() {
   }
 
+  pinnedNote() {
+    console.log(this.note.id);
+    this.noteService.pinNote(this.note.id).subscribe(response => {
+      if (this.note.isPinned) {
+        this.isPinned = false;
+        this.matSnackBar.open("Note unPinned Successfully", 'Ok', { duration: 3000 });
+        // this.dialogRef.close();
+      }
+      else if (!this.note.isPinned) {
+        this.isPinned = true;
+        this.matSnackBar.open("Note Pinned Successfully", 'Ok', { duration:3000 });
+        // this.dialogRef.close();
+      }
+      console.log(response);
+      // this.dialogRef.close();
+    },
+      (error: any) => {
+        console.log("error");
+      });
+  }
+  
 }

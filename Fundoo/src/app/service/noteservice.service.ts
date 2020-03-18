@@ -24,19 +24,19 @@ export class NoteServiceService{
         
     }
     updateNote(user: any): Observable<any> { 
-        return this.httpservice.put(this.API_URL+environment.updateNote,user,{headers:new HttpHeaders().get(this.token)});
+        return this.httpservice.put(this.API_URL+environment.updateNote,user,{headers:new HttpHeaders({'token':this.token})});
         
     }
     getAllNote(): Observable<any> { 
-        return this.httpservice.get(this.API_URL+environment.updateNote,{headers:new HttpHeaders().get(this.token)});
+        return this.httpservice.get(this.API_URL+environment.getAllNotes,{headers:new HttpHeaders({'token':this.token})});
         
     }
     getPinnedAllNote(): Observable<any> { 
-        return this.httpservice.get(this.API_URL+environment.updateNote,{headers:new HttpHeaders().get(this.token)});
+        return this.httpservice.get(this.API_URL+environment.getPinNote,{headers:new HttpHeaders({'token':this.token})});
         
     }
     pinNote(note:any): Observable<any> { 
-        return this.httpservice.get(this.API_URL+environment.pinNote+note.id,{headers:new HttpHeaders().get(this.token)});
+        return this.httpservice.get(this.API_URL+environment.pinNote+note.id,{headers:new HttpHeaders({'token':this.token})});
         
     }
 }

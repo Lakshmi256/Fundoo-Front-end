@@ -16,7 +16,7 @@ export class DisplaynotesComponent implements OnInit {
   popup: boolean = false;
   notes:Note[];
   getAllNotes: [];
-  pinnotes: Note[];
+  isPinned: Note[];
   unpinnotes:Note[];
 
   private dialogref: any;
@@ -61,15 +61,15 @@ export class DisplaynotesComponent implements OnInit {
   openDialog(note: any) {
     console.log("open" + note.id);
 
-  //   this.dialogref = this.dialog.open(UpdatenoteComponent, {
-  //     panelClass: 'custom-dialog-container',
-  //     width: '500px',
-  //     data: { note }
-  //   });
-  // }
+    // this.dialogref = this.dialog.open(UpdatenoteComponent, {
+    //   panelClass: 'custom-dialog-container',
+    //   width: '500px',
+    //   data: { note }
+    // });
+  }
 
   // updateNote(newNote) {
-  //   this.noteservice.updateNote(newNote, localStorage.getItem('token'), this.note.id).subscribe(response => {
+  //   this.noteservice.updateNote(newNote,  this.note.id).subscribe(response => {
   //     console.log(response.obj);
   //     // this.dialogRef.close();
   //   },
@@ -80,11 +80,10 @@ export class DisplaynotesComponent implements OnInit {
   // token(newNote: any, id: any, token: any) {
   //   throw new Error("Method not implemented.");
   // }
-  // getAllPinNotes() {
-  //   this.noteservice.getAllNotes(localStorage.getItem('token')).subscribe((response: any) => {
-  //     console.log(response);
-  //     this.notes = response.obj;
-  //   });
-  // }
+  getAllPinNotes() {
+    this.noteservice.getPinnedAllNote().subscribe((response: any) => {
+      console.log(response);
+      this.notes = response.obj;
+    });
   }
-}
+  }

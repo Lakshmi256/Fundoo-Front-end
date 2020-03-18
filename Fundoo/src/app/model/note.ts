@@ -3,9 +3,9 @@ export class Note{
     id:number;
     discription:string;
     
-    deleted:boolean;
-    pinned:boolean;
-    archived:boolean;
+    isTrashed:boolean;
+    isPinned:boolean;
+    isArchieved:boolean;
     noteColor:string;
     reminder:string;
     createdBy:number;
