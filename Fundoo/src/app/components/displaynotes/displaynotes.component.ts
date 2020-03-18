@@ -10,80 +10,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./displaynotes.component.scss']
 })
 export class DisplaynotesComponent implements OnInit {
-  [x: string]: any;
-  note: Note = new Note();
-  Token = localStorage.getItem('token');
-  popup: boolean = false;
-  notes:Note[];
-  getAllNotes: [];
-  isPinned: Note[];
-  unpinnotes:Note[];
 
-  private dialogref: any;
-  constructor(private noteservice: NoteServiceService, public dialog: MatDialog,public dialogRef: MatDialogRef<DisplaynotesComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any, private router: Router) { }
 
   ngOnInit() {
-    this.noteservice.autoRefresh$.subscribe(()=>{
-      this.displayNotes();
-    }); 
-    this.displayNotes();
+   
   }
-
-  public displayNotes() {
-    let getPinnedNotes = this.noteservice.getPinnedAllNote();
-    this.noteservice.getAllNote().subscribe((response: any) => {
-      console.log(response);
-      this.notes = response.data;
-    })
-    this.noteservice.getPinnedAllNote().subscribe(
-      (data) => {
-        console.log("Pin Notes"+data.data);
-        this.pinnotes = data.data;
-    })
-    this.noteservice.getAllNote().subscribe(
-      (data) => {
-        console.log("Unpin Notes"+data.data);
-        this.unpinnotes = data.data;
-      }
-    );
-  }
-  
-  closeClick(newNote: any) {
-    console.log(this.note.title);
-    console.log(this.note.discription);
-    this.updateNote(newNote);
-  }
-  onClickNoteId(id) {
-    this.noteservice.pinNote(id);
-  }
-  
-  openDialog(note: any) {
-    console.log("open" + note.id);
-
-    // this.dialogref = this.dialog.open(UpdatenoteComponent, {
-    //   panelClass: 'custom-dialog-container',
-    //   width: '500px',
-    //   data: { note }
-    // });
-  }
-
-  // updateNote(newNote) {
-  //   this.noteservice.updateNote(newNote,  this.note.id).subscribe(response => {
-  //     console.log(response.obj);
-  //     // this.dialogRef.close();
-  //   },
-  //     error => {
-  //       console.log("error");
-  //     })
-  // }
-  // token(newNote: any, id: any, token: any) {
-  //   throw new Error("Method not implemented.");
-  // }
-  getAllPinNotes() {
-    this.noteservice.getPinnedAllNote().subscribe((response: any) => {
-      console.log(response);
-      this.notes = response.obj;
-    });
-  }
-  }
+}
