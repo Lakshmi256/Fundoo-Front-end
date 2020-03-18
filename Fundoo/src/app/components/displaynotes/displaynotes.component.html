@@ -1,10 +1,22 @@
-<div>
-    <mat-card style=" width: 29em; border-radius: 13px;box-shadow: 0px 2px 5px 3px;" class="mat-card" fxLayout="row">
-
-
-    </mat-card>
-
-
-
-
+<div style="padding-left: 100px;font-family: fantasy;color: darkgray;">
+    Others</div>
+<div style="flex-wrap: wrap;">
+    <div class="getAllNotes" fxLayout="{{view}}" fxFlexOffset="15" style="flex-direction: row; box-sizing: border-box; display: flex; margin-left: 15%;">
+        <mat-card class="getNotesMat" [ngStyle]="{'background':note.noteColor}" [ngClass]="{'qwerty':flag,'qwerty2':!flag}" *ngFor="let note of unpinnotes">
+            <div>
+                <div class="pinNotes">
+                    <app-pin-notes [note]="note" (click)="onClickNoteId(note.id)"></app-pin-notes>
+                </div>
+                <div class="title" (click)="openDialog(note)">
+                    {{note.title}}
+                </div>
+                <div class="title" (click)="openDialog(note)">
+                    {{note.content}}
+                </div>
+            </div>
+            <div>
+                <app-iconlist [note]="note"></app-iconlist>
+            </div>
+        </mat-card>
+    </div>
 </div>
