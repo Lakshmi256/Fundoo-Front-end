@@ -30,7 +30,6 @@ export class CreatenoteComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.createNoteForm.value)
     {
       this.noteservice.createNote(this.createNoteForm.value).subscribe(notes=> {
         this.note = new Note();

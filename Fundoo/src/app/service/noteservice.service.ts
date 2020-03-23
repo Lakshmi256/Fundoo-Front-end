@@ -28,12 +28,14 @@ export class NoteServiceService{
         
     }
     getAllNote(): Observable<any> { 
+       
         return this.httpservice.get(this.API_URL+environment.getAllNotes,{headers:new HttpHeaders({'token':this.token})});
-        
+        console.log("lp1")
     }
     getPinnedAllNote(): Observable<any> { 
-        return this.httpservice.get(this.API_URL+environment.getPinNote,{headers:new HttpHeaders({'token':this.token})});
         
+        return this.httpservice.get(this.API_URL+environment.getPinNote,{headers:new HttpHeaders({'token':this.token})});
+        console.log("lp3")
     }
     pinNote(note:any): Observable<any> { 
         return this.httpservice.get(this.API_URL+environment.pinNote+note.id,{headers:new HttpHeaders({'token':this.token})});

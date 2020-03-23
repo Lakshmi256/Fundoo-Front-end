@@ -1,5 +1,5 @@
 <div class="main-div">
-    <mat-card style="width:300px; box-shadow: 7px 5px 6px 5px; opacity: 0.8;">
+    <mat-card style="width:250px; box-shadow: 7px 5px 6px 5px; opacity: 0.8;">
         <div fxLayout=" row " fxLayoutAlign="center " style="font-size:100px;margin-bottom:30px ">
             <mat-card-title>
                 <span style="color:rgb(255, 123, 0); ">F</span>
@@ -13,7 +13,8 @@
             </mat-card-title>
             <form [formGroup]="registerForm" (ngSubmit)="registerForm.valid && onRegisterSubmit()" noval>
                 <div>
-                    <mat-form-field style="margin-bottom: -1.25em;">
+                    <mat-form-field style="margin-bottom: -1.25em;" appearance='outline'>
+                        <mat-label>email</mat-label>
                         <mat-icon aria-hidden="false" aria-label="Example home icon">home
                             <input id="name" matInput formControlName="name" [(ngModel)]=" user.name " placeholder="enter Name " autocomplete="off ">
                         </mat-icon>

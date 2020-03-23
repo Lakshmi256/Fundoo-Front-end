@@ -1,104 +1,95 @@
-<mat-toolbar class="docs-navbar-header">
-    <mat-toolbar-row>
-
-        <div class="Main">
-            <div class="sideNavIcon">
-                <div>
-
-                    <mat-icon (click)="drawer.toggle()">menu</mat-icon>
-
-                </div>
-                <div>
-                    <img src="assets/icons/lp.jpg" height="40px" width="40px" style="margin-left: 1em;">
-                </div>
-
-                <div>Fundoo</div>
-
-            </div>
-
-            <div class="searchWhole">
-
-
-                <div class="searchbar">
-                    <div class="searchIcon">
-                        <mat-icon matSuffix>search</mat-icon>
-                    </div>
-                    <div>
-                        <input class="input" matInput type="searchbar" placeholder="  Search" style="outline:none; color: darkgray;">
-                    </div>
-                </div>
-
-                <div class="appBarLastIcon">
-                    <div class="refresh">
-                        <button id="refreshbutton" mat-icon-button>
-                <mat-icon>refresh</mat-icon>
-              </button>
-                        <button mat-icon-button>
-                <mat-icon>reorder</mat-icon>
-              </button>
-                    </div>
-
-
-                    <button mat-icon-button>
-              <mat-icon>
-                account_circle
-              </mat-icon>
-            </button>
-
-                </div>
-            </div>
+<<div class="container">
+    <div>
+        <mat-toolbar >
+        <mat-toolbar-row>
+         
+          <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+          <img class="image" src="assets/icons/lp.jpg" alt="Keep">
+          <span><mat-label style="font-family: sans-serif; padding-left: 5px;">Keep</mat-label>
+          </span>
+          <div class="search">
+          <button mat-icon-button class="search-icon">
+            <mat-icon>search</mat-icon>
+          </button>
+          <input class="searchInput" placeholder="Search" >
+          <button mat-icon-button class="cancel">
+            <mat-icon>clear</mat-icon>
+          </button>
         </div>
-    </mat-toolbar-row>
-
-</mat-toolbar>
-
-<!-- side navigation bar -->
-
-
-<div class="sidenavdiv" style="background-color: cornsilk;">
-
-
-    <mat-drawer-container class="example-container" autosize>
-        <mat-drawer #drawer class="example-sidenav" mode="side">
-            <div class="maindiv">
-
-
-                <div class="notesdiv">
-
-                    <button style="width: 180px;border-radius: 15px 15px 15px 15px;background-color: rgb(255, 255, 255);outline: none;" class="notes" (click)="notes()">
-            <img src="assets/icons/lp1.png "style="width:15px;height:15px;">   
-              Notes
-            </button><br>
-                </div>
-            </div>
-
-            <button class="remainder" style="width: 180px;border-radius: 10px 10px 10px 10px;background-color: aliceblue;outline: none;">
-                Reminders
-              </button>
-
-
-            <div class="lebelmain ">
-
-                <div class="labelmain ">LABELS</div><br>
-            </div><br>
-
-            <button class="label " style="width: 180px;border-radius: 10px 10px 10px 10px;background-color: aliceblue;outline: none; ">
-                Edit labels
-              </button>
-
-
-            <div class="trashmain ">
-                <button class="archive " style="width: 180px;border-radius: 10px 10px 10px 10px;background-color: aliceblue;outline: none; ">
-                  Archive
-              </button><br>
-                <button class="trash " style="width: 180px;border-radius: 10px 10px 10px 10px;background-color: aliceblue;outline: none; ">
-                  Trash
-              </button>
-            </div>
-        </mat-drawer>
-        <div>
-
+        <div class="rightside">
+          <button mat-icon-button class="refresh">
+            <mat-icon>refresh</mat-icon>
+          </button>
+          <button mat-icon-button class="list">
+            <mat-icon>grid_view</mat-icon>
+          </button>
+          <button mat-icon-button class="sttings">
+            <mat-icon>settings</mat-icon>
+          </button>
+          <button mat-icon-button class="apps"(click)="onsignout()">
+            <mat-icon>apps</mat-icon>
+          </button>
         </div>
-        <div>
-            <router-outlet></router-outlet>
+        </mat-toolbar-row>
+       </mat-toolbar>
+    </div>
+   <div class="upmat" >
+    <mat-sidenav-container  >
+       <mat-sidenav #snav mode="side" class="matsidenav"> 
+         <div class="notediv">
+          <button mat-button class="notebutton" (click)="notes()">
+            <div class="icondiv">
+              <mat-icon>lightbulb_outline</mat-icon>
+            </div>
+            <span > Notes</span>
+          </button>
+      
+          <button mat-button class="remindbutton">
+            <div class="icondiv">
+              <mat-icon>notifications</mat-icon>
+            </div>
+            <span>Reminder</span>
+          </button>
         </div>
+        <mat-divider></mat-divider>
+        
+        <diV class="labeldiv">
+          <mat-label class="labelmat">LABELS</mat-label>
+          
+          <button mat-button class="labelbutton">
+            <div class="icondiv">
+              <mat-icon>edit</mat-icon>
+            </div>
+            <span >Edit labels</span>
+          </button>
+        </diV>
+  
+        <mat-divider></mat-divider>
+        <diV class="notediv">
+        
+          <button mat-button class="notebutton">
+            <div class="icondiv">
+              <mat-icon>archive</mat-icon>
+            </div>
+            <span > Archive</span>
+          </button>
+      
+          <button mat-button class="remindbutton">
+            <div class="icondiv">
+              <mat-icon>delete</mat-icon>
+            </div>
+            <span>Trashed</span>
+          </button>
+          
+        </diV>
+  
+        
+  
+        <mat-divider></mat-divider>
+       </mat-sidenav>
+      <mat-sidenav-content >
+        <router-outlet ></router-outlet>
+     </mat-sidenav-content>
+    </mat-sidenav-container>
+    </div>
+  </div>

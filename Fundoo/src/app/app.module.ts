@@ -8,6 +8,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDialogModule} from '@angular/material/dialog';
+import { FlexLayoutModule } from "@angular/flex-layout";
+
 
 
 
@@ -27,7 +29,6 @@ import { CreatenoteComponent } from './components/createnote/createnote.componen
 import { NotesComponent } from './components/notes/notes.component';
 import { DisplaynotesComponent } from './components/displaynotes/displaynotes.component';
 import { PinNotesComponent } from './components/pin-notes/pin-notes.component';
-import { IconsComponent } from './components/icons/icons.component';
 
 
 
@@ -43,7 +44,6 @@ import { IconsComponent } from './components/icons/icons.component';
     NotesComponent,
     DisplaynotesComponent,
     PinNotesComponent,
-    IconsComponent,
   
   ],
   imports: [
@@ -61,6 +61,7 @@ import { IconsComponent } from './components/icons/icons.component';
     MatSidenavModule,
     MatToolbarModule,
     MatDialogModule,
+    FlexLayoutModule
     
   ],
   providers: [HttpClient],
