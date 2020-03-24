@@ -30,6 +30,7 @@ import { NotesComponent } from './components/notes/notes.component';
 import { DisplaynotesComponent } from './components/displaynotes/displaynotes.component';
 import { PinNotesComponent } from './components/pin-notes/pin-notes.component';
 import{MatDividerModule} from '@angular/material/divider';
+import { IconsComponent } from './components/icons/icons.component';
 
 
 
@@ -45,6 +46,7 @@ import{MatDividerModule} from '@angular/material/divider';
     NotesComponent,
     DisplaynotesComponent,
     PinNotesComponent,
+    IconsComponent,
   
   ],
   imports: [
