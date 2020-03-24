@@ -1,14 +1,15 @@
 <div style="padding-left: 100px;font-family: fantasy;color: darkgray;">Pinnotes</div>
 <div style="flex-wrap: wrap;">
     <div class="getAllNotes" fxLayout="{{view}}" fxFlexOffset="15" style="flex-direction: row; box-sizing: border-box; display: flex; margin-left: 15%;">
-        <mat-card class="getNotesMat" [ngStyle]="{'background':note.noteColor}"
+        <mat-card class="getNotesMat" 
               *ngFor="let note of pinnotes" >
             <div>
                 <div class="pinNotes">
                     <app-pin-notes [note]="note" (click)="onClickNoteId(note.id)"></app-pin-notes>
                 </div>
                     {{note.title}}
-                    {{note.discription}}
+                    <br>
+                    {{note.description}}
           
             </div>
         </mat-card>
@@ -18,14 +19,15 @@
 <div style="padding-left: 100px;font-family: fantasy;color: darkgray;">Others</div>
 <div style="flex-wrap: wrap;">
     <div class="getAllNotes" fxLayout="{{view}}" fxFlexOffset="15" style="flex-direction: row; box-sizing: border-box; display: flex; margin-left: 15%;">
-        <mat-card class="getNotesMat" [ngStyle]="{'background':note.noteColor}"
-              *ngFor="let note of unpinnotes" >
+        <mat-card class="getNotesMat" 
+              *ngFor="let note of notes" >
             <div>
                 <div class="pinNotes">
                     <app-pin-notes [note]="note" (click)="onClickNoteId(note.id)"></app-pin-notes>
                 </div>
                     {{note.title}}
-                    {{note.discription}}
+                    <br>
+                    {{note.description}}
             </div>
           
         </mat-card>

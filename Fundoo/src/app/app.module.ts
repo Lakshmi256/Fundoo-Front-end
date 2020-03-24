@@ -29,6 +29,7 @@ import { CreatenoteComponent } from './components/createnote/createnote.componen
 import { NotesComponent } from './components/notes/notes.component';
 import { DisplaynotesComponent } from './components/displaynotes/displaynotes.component';
 import { PinNotesComponent } from './components/pin-notes/pin-notes.component';
+import{MatDividerModule} from '@angular/material/divider';
 
 
 
@@ -61,7 +62,8 @@ import { PinNotesComponent } from './components/pin-notes/pin-notes.component';
     MatSidenavModule,
     MatToolbarModule,
     MatDialogModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatDividerModule
     
   ],
   providers: [HttpClient],

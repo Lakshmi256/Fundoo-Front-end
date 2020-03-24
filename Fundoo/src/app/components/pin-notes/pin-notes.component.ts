@@ -17,7 +17,7 @@ export class PinNotesComponent implements OnInit {
   isPinned: boolean;
   Token=localStorage.getItem('token');
 
-  constructor(@Inject(MAT_DIALOG_DATA) public notes: Note, private noteService: NoteServiceService, private snackBar: MatSnackBarModule,
+  constructor( private noteService: NoteServiceService, private snackBar: MatSnackBarModule,
   public dialog: MatDialog, private sanitizer: DomSanitizer, private matSnackBar: MatSnackBar) { }
 
   ngOnInit() {

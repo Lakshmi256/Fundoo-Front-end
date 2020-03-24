@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, Input } from '@angular/core';
 import { Note } from 'src/app/model/note';
 import { NoteServiceService } from 'src/app/service/noteservice.service';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
@@ -32,8 +32,9 @@ export class DisplaynotesComponent implements OnInit {
   public displayNotes() {
     let getPinnedNotes = this.noteservice.getPinnedAllNote();
     this.noteservice.getAllNote().subscribe((response: any) => {
-      console.log(response);
-      this.notes = response.list;
+      console.log(response.note);
+      this.notes = response.note;
+      console.log(this.notes)
     })
     this.noteservice.getPinnedAllNote().subscribe(
       (data) => {
@@ -45,7 +46,7 @@ export class DisplaynotesComponent implements OnInit {
   
   closeClick(newNote: any) {
     console.log(this.note.title);
-    console.log(this.note.discription);
+    console.log(this.note.description);
     this.updateNote(newNote);
   }
   onClickNoteId(id) {
