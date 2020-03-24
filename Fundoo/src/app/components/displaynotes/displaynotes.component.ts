@@ -39,7 +39,7 @@ export class DisplaynotesComponent implements OnInit {
     this.noteservice.getPinnedAllNote().subscribe(
       (data) => {
         console.log("Pin Notes"+data.data);
-        this.pinnotes = data.list;
+        this.pinnotes = data.note;
     })
    
   }
