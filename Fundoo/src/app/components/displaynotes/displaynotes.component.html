@@ -1,6 +1,6 @@
 <div style="padding-left: 100px;font-family: fantasy;color: darkgray;">Pinnotes</div>
 <div style="flex-wrap: wrap;">
-    <div class="getAllNotes" fxLayout="{{view}}" fxFlexOffset="15" style="flex-direction: row; box-sizing: border-box; display: flex; margin-left: 15%;">
+    <div class="getAllNotes" fxLayout="{{view}}" fxFlexOffset="15" style="flex-direction: row;  display: flex; margin-left: 15%;">
         <mat-card class="getNotesMat" 
               *ngFor="let note of pinnotes" >
             <div>
@@ -12,6 +12,7 @@
                     {{note.description}}
           
             </div>
+            <app-iconlist [note]="note"></app-iconlist>
         </mat-card>
     </div>
 </div>
