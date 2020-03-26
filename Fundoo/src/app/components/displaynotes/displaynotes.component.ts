@@ -32,9 +32,7 @@ export class DisplaynotesComponent implements OnInit {
   public displayNotes() {
     let getPinnedNotes = this.noteservice.getPinnedAllNote();
     this.noteservice.getAllNote().subscribe((response: any) => {
-      console.log(response.note);
       this.notes = response.note;
-      console.log(this.notes)
     })
     this.noteservice.getPinnedAllNote().subscribe(
       (data) => {
