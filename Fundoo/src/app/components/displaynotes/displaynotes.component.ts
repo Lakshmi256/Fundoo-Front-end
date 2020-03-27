@@ -29,39 +29,28 @@ export class DisplaynotesComponent implements OnInit {
     this.displayNotes();
   }
 
-  public displayNotes() {
-    let getPinnedNotes = this.noteservice.getPinnedAllNote();
-    this.noteservice.getAllNote().subscribe((response: any) => {
-      this.notes = response.note;
-    })
-    this.noteservice.getPinnedAllNote().subscribe(
-      (data) => {
-        console.log("Pin Notes"+data.data);
-        this.pinnotes = data.note;
-    })
-   
-  }
-  
-  closeClick(newNote: any) {
-    console.log(this.note.title);
-    console.log(this.note.description);
-    this.updateNote(newNote);
-  }
-  onClickNoteId(id) {
-    this.noteservice.pinNote(id);
-  }
-  
+  displayNotes() {
+    this.trashedNotes = false;
+    this.archiveNotes = false;
+    this.labelNotes=false;
+    this.trashEmpty=false;
 
-
-
-  token(newNote: any, id: any, token: any) {
-    throw new Error("Method not implemented.");
-  }
-  getAllPinNotes() {
-    this.noteservice.getAllNote().subscribe((response: any) => {
-      console.log(response);
-      this.notes = response.obj;
+    console.log("Display Notes Call");
+    this.noteService.getNotesList().subscribe(message => {
+      this.notes = message.notes;
+      console.log(this.notes);
+    });
+    this.noteService.getPinNotesList().subscribe(message => {
+      console.log("Display PinNotes Call");
+      this.pinnotes = message.notes;
+      console.log(this.pinNotes);
     });
   }
+  
+
+
+
+
+ 
 
 }
