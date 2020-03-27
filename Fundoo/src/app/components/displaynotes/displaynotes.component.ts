@@ -3,6 +3,7 @@ import { Note } from 'src/app/model/note';
 import { NoteServiceService } from 'src/app/service/noteservice.service';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { GetnotesService } from 'src/app/service/getnotes.service';
 
 @Component({
   selector: 'app-displaynotes',
@@ -19,38 +20,31 @@ export class DisplaynotesComponent implements OnInit {
   pinnotes: Note[];
   unpinnotes:Note[];
 
-  constructor(private noteservice: NoteServiceService,
+  constructor(private noteservice: NoteServiceService,private Notes:GetnotesService,
      private router: Router) { }
 
   ngOnInit() {
-    // this.noteservice.autoRefresh$.subscribe(()=>{
-    //   this.displayNotes();
-    // }); 
+  
     this.displayNotes();
   }
 
   displayNotes() {
-    this.trashedNotes = false;
-    this.archiveNotes = false;
-    this.labelNotes=false;
-    this.trashEmpty=false;
-
+    // console.log(this);
+    
+ 
+ 
     console.log("Display Notes Call");
-    this.noteService.getNotesList().subscribe(message => {
-      this.notes = message.notes;
-      console.log(this.notes);
-    });
-    this.noteService.getPinNotesList().subscribe(message => {
-      console.log("Display PinNotes Call");
-      this.pinnotes = message.notes;
-      console.log(this.pinNotes);
-    });
+   console.log(this.Notes.getNotesList());
+  
+    {
+      this.notes = this.Notes.getNotesList()
+      // console.log(this.notes);
+    };
+    // this.noteService.getPinNotesList().subscribe(message => {
+    //   console.log("Display PinNotes Call");
+    //   this.pinnotes = message.notes;
+    //   console.log(this.pinNotes);
+    // });
   }
   
-
-
-
-
- 
-
 }

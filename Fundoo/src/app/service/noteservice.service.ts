@@ -10,8 +10,8 @@ import { Note } from '../model/note';
 })
 export class NoteServiceService{
     private noteId;
-
-    private notesList = new Subject<any>();
+    notes:Note[]
+    // private notesList = new Subject<any>();
     private pinNoteList = new Subject<any>();
     private archiveNoteList = new Subject<any>();
     private trashedNoteList = new Subject<any>();
@@ -66,33 +66,6 @@ export class NoteServiceService{
 
 
 
-    setNotesList(message: Note[]) {
-        console.log(message)
-        this.notesList.next({ notes: message });
-      }
-      getNotesList(): Observable<any> {
-        console.log("getNotesListService Call");
-        return this.notesList.asObservable();
-      }
-      setPinNotesList(message: Note[]) {
-        this.pinNoteList.next({ notes: message });
-      }
-      getPinNotesList(): Observable<any> {
-        return this.pinNoteList.asObservable();
-      }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+       
 
 }
