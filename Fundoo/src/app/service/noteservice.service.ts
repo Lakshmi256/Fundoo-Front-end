@@ -67,6 +67,7 @@ export class NoteServiceService{
 
 
     setNotesList(message: Note[]) {
+        console.log(message)
         this.notesList.next({ notes: message });
       }
       getNotesList(): Observable<any> {

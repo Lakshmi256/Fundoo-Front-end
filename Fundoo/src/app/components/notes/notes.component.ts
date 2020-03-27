@@ -21,9 +21,7 @@ export class NotesComponent implements OnInit {
      private router: Router) { }
 
   ngOnInit() {
-    // this.noteservice.autoRefresh$.subscribe(()=>{
-    //   this.displayNotes();
-    // }); 
+   
     this.displayNotes();
   }
 
@@ -35,7 +33,7 @@ export class NotesComponent implements OnInit {
     })
     this.noteservice.getPinnedAllNote().subscribe(
       (data) => {
-        console.log("Pin Notes"+data.data);
+        console.log("Pin Notes"+data.note);
         this.pinnotes = data.note;
         this.setpinnotes();
     })
