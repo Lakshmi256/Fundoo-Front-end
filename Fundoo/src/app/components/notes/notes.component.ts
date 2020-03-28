@@ -22,8 +22,7 @@ export class NotesComponent implements OnInit {
      private router: Router) { }
 
   ngOnInit() {
-   
-    this.displayNotes();
+   this.displayNotes();
   }
 
   public displayNotes() {
@@ -38,8 +37,9 @@ export class NotesComponent implements OnInit {
       (data) => {
         console.log("Pin Notes"+data.note);
         this.pinnotes = data.note;
+        console.log('lp',this.pinnotes);
         
-        // this.setpinnotes();
+        this.setpinnotes();
     })
    
   }

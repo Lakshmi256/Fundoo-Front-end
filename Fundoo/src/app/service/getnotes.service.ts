@@ -26,6 +26,6 @@ pinNoteList:Note[]
     this.pinNoteList=message
   }
   getPinNotesList() {
-   // return this.pinNoteList
+   return this.pinNoteList
   }
 }
