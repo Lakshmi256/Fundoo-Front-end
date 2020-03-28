@@ -17,6 +17,7 @@ export class NotesComponent implements OnInit {
   getAllNotes: [];
   pinnotes: Note[];
   unpinnotes:Note[];
+  archievenotes:Note[];
 
   constructor(private noteservice: NoteServiceService,private notess:GetnotesService,
      private router: Router) { }
@@ -29,28 +30,30 @@ export class NotesComponent implements OnInit {
     let getPinnedNotes = this.noteservice.getPinnedAllNote();
     this.noteservice.getAllNote().subscribe((response: any) => {
       this.notes = response.note;
-      // console.log('sjdksjd',this.notes);
       
       this.setnotes();
     })
     this.noteservice.getPinnedAllNote().subscribe(
       (data) => {
-        console.log("Pin Notes"+data.note);
         this.pinnotes = data.note;
-        console.log('lp',this.pinnotes);
         
         this.setpinnotes();
     })
-   
+    this.noteservice.getArchieveNote().subscribe(
+      (data) => {
+        this.archievenotes = data.note;
+        
+        this.setarchievenotes();
+    })
   }
   setnotes() {
-    // console.log("setNotes");
     this.notess.setNotesList(this.notes);
   }
   setpinnotes() {
-    console.log("setPinNotes");
     this.notess.setPinNotesList(this.pinnotes);
   }
-  
+  setarchievenotes(){
+    this.notess.setarchieveNotesList(this.archievenotes);
+  }
 }
  

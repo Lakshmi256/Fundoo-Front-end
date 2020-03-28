@@ -31,6 +31,8 @@ import { DisplaynotesComponent } from './components/displaynotes/displaynotes.co
 import { PinNotesComponent } from './components/pin-notes/pin-notes.component';
 import{MatDividerModule} from '@angular/material/divider';
 import { IconsComponent } from './components/icons/icons.component';
+import { SingleNoteComponent } from './components/single-note/single-note.component';
+import { ArchieveComponent } from './components/archieve/archieve.component';
 
 
 
@@ -47,6 +49,8 @@ import { IconsComponent } from './components/icons/icons.component';
     DisplaynotesComponent,
     PinNotesComponent,
     IconsComponent,
+    SingleNoteComponent,
+    ArchieveComponent,
   
   ],
   imports: [

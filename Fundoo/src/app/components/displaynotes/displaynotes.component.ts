@@ -25,26 +25,19 @@ export class DisplaynotesComponent implements OnInit {
      private router: Router) { }
 
   ngOnInit() {
-  this.notescomp.displayNotes
+ 
     this.displayNotes();
   }
 
   displayNotes() {
-    // console.log(this);
     
  
  this.notescomp.displayNotes();
-    console.log("Display Notes Call");
-   console.log(this.Notes.getNotesList());
-  
-    {
+
       this.notes = this.Notes.getNotesList()
-      // console.log(this.notes);
-    };
-    
+
       this.pinnotes = this.Notes.getPinNotesList()
-      console.log(this.pinNotes);
-   
+
   }
   
 }

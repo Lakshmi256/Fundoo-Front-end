@@ -9,19 +9,10 @@ import { Note } from '../model/note';
     providedIn:'root'
 })
 export class NoteServiceService{
-    private noteId;
-    notes:Note[]
-    // private notesList = new Subject<any>();
-    private pinNoteList = new Subject<any>();
-    private archiveNoteList = new Subject<any>();
-    private trashedNoteList = new Subject<any>();
-    private searchNoteData=new Subject<any>();
-    private content = new BehaviorSubject<number>(0);
-    private pincontent = new BehaviorSubject<boolean>(false);
+    
   
     private _autoRefresh$ = new Subject();
-    public share = this.content.asObservable();
-    public sharepin = this.pincontent.asObservable();
+   
   
     get autoRefresh$() {
       return this._autoRefresh$;
@@ -58,6 +49,16 @@ export class NoteServiceService{
     pinNote(note:any): Observable<any> { 
         return this.httpservice.get(this.API_URL+environment.pinNote+note.id,{headers:new HttpHeaders({'token':this.token})});
         
+    }
+    getArchieveNote(): Observable<any> { 
+       
+        return this.httpservice.get(this.API_URL+environment.getArchieveNote,{headers:new HttpHeaders({'token':this.token})});
+        console.log("lp1")
+    }
+    gettrashedNote(): Observable<any> { 
+       
+        return this.httpservice.get(this.API_URL+environment.getTrashNotes,{headers:new HttpHeaders({'token':this.token})});
+        console.log("lp1")
     }
 
 

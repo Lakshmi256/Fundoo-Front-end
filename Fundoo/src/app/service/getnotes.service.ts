@@ -7,6 +7,7 @@ import { Note } from '../model/note';
 export class GetnotesService {
 notes:Note[]
 pinNoteList:Note[]
+archievenotes:Note[]
   constructor() { }
 
 
@@ -14,11 +15,9 @@ pinNoteList:Note[]
 
   setNotesList(message: Note[]) {
     this.notes=message
-    console.log('notes---',this.notes);
   }
   getNotesList(){
-    console.log("getNotesListService Call");
-    // if(t)
+  
     return this.notes
 
   }
@@ -27,5 +26,11 @@ pinNoteList:Note[]
   }
   getPinNotesList() {
    return this.pinNoteList
+  }
+  setarchieveNotesList(message: Note[]) {
+    this.archievenotes=message
+  }
+  getarchieveNotesList() {
+   return this.archievenotes
   }
 }

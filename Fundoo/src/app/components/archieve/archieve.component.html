@@ -1,0 +1,17 @@
+<div style="flex-wrap: wrap;">
+        <mat-card class="getNotesMat" 
+              *ngFor="let note of archievednotes" >
+            <div>
+                <div class="archievednotes">
+                    <!-- <app-pin-notes [note]="note" (click)="onClickNoteId(note.id)"></app-pin-notes> -->
+                </div>
+                <mat-card-title>
+                    {{note.title}}
+                </mat-card-title>
+                    <br>
+                    {{note.description}}
+          
+            </div>
+            <app-icons></app-icons>
+        </mat-card>
+    </div>

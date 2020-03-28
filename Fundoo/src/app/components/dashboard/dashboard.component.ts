@@ -12,6 +12,7 @@ export class DashboardComponent implements OnInit {
   constructor(private router:Router) { }
 
   ngOnInit(): void {
+    
   }
   notes(){
     this.router.navigate(['/dashboard/notes']);
@@ -20,6 +21,9 @@ export class DashboardComponent implements OnInit {
   onsignout(){
     localStorage.clear;
     this.router.navigate(['/login'])
+  }
+  archieve(){
+    this.router.navigate(['/dashboard/archieve'])
   }
 
 }
