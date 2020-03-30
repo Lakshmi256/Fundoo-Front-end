@@ -18,6 +18,7 @@ export class NotesComponent implements OnInit {
   pinnotes: Note[];
   unpinnotes:Note[];
   archievenotes:Note[];
+  trashednotes:Note[];
 
   constructor(private noteservice: NoteServiceService,private notess:GetnotesService,
      private router: Router) { }
@@ -28,8 +29,12 @@ export class NotesComponent implements OnInit {
     .subscribe(params => {
       this.param = params['page'] || '';
       if (this.param == "archive") {
-        console.log("elseif archive");
+        
         this.getArchieveNote();
+      }
+      else  if (this.param == "trash") {
+       
+        this.getTrashNote();
       }
       else{
       this.displayNotes();
@@ -50,6 +55,8 @@ export class NotesComponent implements OnInit {
         
         this.setpinnotes();
     })
+  }
+  public getArchieveNote(){
     this.noteservice.getArchieveNote().subscribe(
       (data) => {
         this.archievenotes = data.note;
@@ -57,6 +64,15 @@ export class NotesComponent implements OnInit {
         this.setarchievenotes();
     })
   }
+  public getTrashNote(){
+    this.noteservice.gettrashedNote().subscribe(
+      (data) => {
+        this.trashednotes = data.note;
+        
+        this.setTrashednotes();
+    })
+  }
+
   setnotes() {
     this.notess.setNotesList(this.notes);
   }
@@ -65,6 +81,9 @@ export class NotesComponent implements OnInit {
   }
   setarchievenotes(){
     this.notess.setarchieveNotesList(this.archievenotes);
+  }
+  setTrashednotes(){
+    this.notess.setaTrashedNotesList(this.trashednotes);
   }
 }
  

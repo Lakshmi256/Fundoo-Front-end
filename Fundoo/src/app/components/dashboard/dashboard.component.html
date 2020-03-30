@@ -80,13 +80,14 @@
             <span > Archive</span>
           </button>
       </a>
+      <a [routerLink]="['notes']" [queryParams]="{ page: 'trash' }">
           <button mat-button class="remindbutton">
             <div class="icondiv">
               <mat-icon>delete</mat-icon>
             </div>
             <span>Trashed</span>
           </button>
-          
+        </a>
         </diV>
   
         

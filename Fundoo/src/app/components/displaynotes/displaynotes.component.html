@@ -26,7 +26,7 @@
               *ngFor="let note of notes" >
             <div>
                 <div class="pinNotes">
-                    <app-pin-notes [note]="note" (click)="onClickNoteId(note.id)"></app-pin-notes>
+                    <app-pin-notes [note]="note" ></app-pin-notes>
                 </div>
             <mat-card-title>
                     {{note.title}}

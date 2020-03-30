@@ -8,6 +8,7 @@ export class GetnotesService {
 notes:Note[]
 pinNoteList:Note[]
 archievenotes:Note[]
+trashednotes:Note[]
   constructor() { }
 
 
@@ -32,5 +33,11 @@ archievenotes:Note[]
   }
   getarchieveNotesList() {
    return this.archievenotes
+  }
+  setaTrashedNotesList(message: Note[]) {
+    this.trashednotes=message
+  }
+  getTrashedNotesList() {
+   return this.trashednotes
   }
 }
