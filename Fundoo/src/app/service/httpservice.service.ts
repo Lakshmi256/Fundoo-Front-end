@@ -24,5 +24,8 @@ export class HttpService {
   delete(url: any, options: any):Observable<any>{
     return this._http.delete(url, options);
   }
+  put1(url: any, options: any): Observable<any> {
+    return this._http.put(url, options);
+  }
 
 }

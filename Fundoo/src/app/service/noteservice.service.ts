@@ -61,7 +61,10 @@ export class NoteServiceService{
         console.log("lp1")
     }
 
-
+    archieveNote(note:any): Observable<any> { 
+        return this.httpservice.put1(this.API_URL+environment.archieveNote+note.id,{headers:new HttpHeaders({'token':this.token})});
+        
+    }
 
 
 

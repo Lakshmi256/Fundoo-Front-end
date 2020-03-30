@@ -14,7 +14,7 @@
                     {{note.description}}
           
             </div>
-            <app-icons></app-icons>
+            <app-icons [note]='note' (click)="onClickNoteId(note.id)"></app-icons>
         </mat-card>
     </div>
 </div>
