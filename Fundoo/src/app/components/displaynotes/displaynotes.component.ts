@@ -1,10 +1,8 @@
 import { Component, OnInit, Inject, Input } from '@angular/core';
 import { Note } from 'src/app/model/note';
-import { NoteServiceService } from 'src/app/service/noteservice.service';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { GetnotesService } from 'src/app/service/getnotes.service';
-import { NotesComponent } from '../notes/notes.component';
 
 @Component({
   selector: 'app-displaynotes',
@@ -20,24 +18,53 @@ export class DisplaynotesComponent implements OnInit {
   getAllNotes: [];
   pinnotes: Note[];
   unpinnotes:Note[];
+  trash:boolean=false;
+  archieve:boolean=false;
 
-  constructor(private noteservice: NoteServiceService,private Notes:GetnotesService,private notescomp:NotesComponent,
-     private router: Router) { }
+  constructor(private Notes:GetnotesService,
+     private router: Router,private route:ActivatedRoute) { 
+       
+     }
 
   ngOnInit() {
- 
-    this.displayNotes();
+    this.route
+    .queryParams
+    .subscribe(params => {
+      this.param = params['page'] || '';
+      if (this.param == "archive") {
+        
+        this.getArchieveNote();
+      }
+      else  if (this.param == "trash") {
+       
+        this.getTrashNote();
+      }
+      else{
+      this.displayNotes();
+      }
+    });
+   
   }
 
   displayNotes() {
     
  
- this.notescomp.displayNotes();
 
+      this.trash=false;
+      this.archieve=false;
       this.notes = this.Notes.getNotesList()
 
       this.pinnotes = this.Notes.getPinNotesList()
 
   }
-  
+  getTrashNote(){
+    this.trash=true;
+    this.archieve=false;
+    this.notes=this.Notes.getTrashedNotesList()
+  }
+  getArchieveNote(){
+    this.trash=false;
+    this.archieve=true;
+    this.notes=this.Notes.getarchieveNotesList()
+  }
 }

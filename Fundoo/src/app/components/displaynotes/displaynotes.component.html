@@ -1,11 +1,13 @@
-<div style="padding-left: 100px;font-family: fantasy;color: darkgray;">Pinnotes</div>
+<div style="padding-left: 100px;font-family: fantasy;color: darkgray;" *ngIf="!trash && !archieve">Pinnotes
 <div style="flex-wrap: wrap;">
     <div class="getAllNotes" fxLayout="{{view}}" fxFlexOffset="15" style="flex-direction: row;  display: flex; margin-left: 15%;">
         <mat-card class="getNotesMat" 
               *ngFor="let note of pinnotes" >
             <div>
                 <div class="pinNotes">
-                    <app-pin-notes [note]="note" ></app-pin-notes>
+                    <button *ngIf="!isPinned" mat-icon-button matTooltip="pin" class="button">
+                        <img class="image" style="border: none; width: 93%;" src="../../../assets/icons/pinned.svg" height="50%" id="imgRem">
+                     </button>
                 </div>
                 <mat-card-title>
                     {{note.title}}
@@ -18,8 +20,9 @@
         </mat-card>
     </div>
 </div>
+</div>
 
-<div style="padding-left: 100px;font-family: fantasy;color: darkgray;">Others</div>
+<div style="padding-left: 100px;font-family: fantasy;color: darkgray;"*ngIf="!trash || !archieve">Others</div>
 <div style="flex-wrap: wrap;">
     <div class="getAllNotes" fxLayout="{{view}}" fxFlexOffset="15" style="flex-direction: row; box-sizing: border-box; display: flex; margin-left: 15%;">
         <mat-card class="getNotesMat" 

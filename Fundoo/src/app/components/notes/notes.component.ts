@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Note } from 'src/app/model/note';
 import { NoteServiceService } from 'src/app/service/noteservice.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { GetnotesService } from 'src/app/service/getnotes.service';
 
 @Component({
@@ -19,9 +19,11 @@ export class NotesComponent implements OnInit {
   unpinnotes:Note[];
   archievenotes:Note[];
   trashednotes:Note[];
+  trash:boolean=false;
+
 
   constructor(private noteservice: NoteServiceService,private notess:GetnotesService,
-     private router: Router) { }
+     private router: Router,private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route
@@ -43,7 +45,7 @@ export class NotesComponent implements OnInit {
   }
 
   public displayNotes() {
-    let getPinnedNotes = this.noteservice.getPinnedAllNote();
+    this.trash=true;
     this.noteservice.getAllNote().subscribe((response: any) => {
       this.notes = response.note;
       
@@ -57,6 +59,7 @@ export class NotesComponent implements OnInit {
     })
   }
   public getArchieveNote(){
+    this.trash=false;
     this.noteservice.getArchieveNote().subscribe(
       (data) => {
         this.archievenotes = data.note;
@@ -65,6 +68,7 @@ export class NotesComponent implements OnInit {
     })
   }
   public getTrashNote(){
+    this.trash=false;
     this.noteservice.gettrashedNote().subscribe(
       (data) => {
         this.trashednotes = data.note;
