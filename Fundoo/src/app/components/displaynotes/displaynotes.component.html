@@ -5,7 +5,7 @@
               *ngFor="let note of pinnotes" >
             <div>
                 <div class="pinNotes">
-                    <app-pin-notes [note]="note" (click)="onClickNoteId(note.id)"></app-pin-notes>
+                    <app-pin-notes [note]="note" ></app-pin-notes>
                 </div>
                 <mat-card-title>
                     {{note.title}}
@@ -14,7 +14,7 @@
                     {{note.description}}
           
             </div>
-            <app-icons [note]='note' (click)="onClickNoteId(note.id)"></app-icons>
+            <app-icons [note]='note' ></app-icons>
         </mat-card>
     </div>
 </div>
@@ -34,7 +34,7 @@
                     <br>
                     {{note.description}}
             </div>
-          <app-icons ></app-icons>
+          <app-icons [note]='note' ></app-icons>
         </mat-card>
     </div>
 </div>

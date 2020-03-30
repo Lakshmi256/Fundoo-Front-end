@@ -10,15 +10,17 @@ import { NoteServiceService } from 'src/app/service/noteservice.service';
 })
 export class IconsComponent implements OnInit {
   @Input() note: Note;
-  Id: number;
+  id: number;
   isArchieved: boolean = false;
   constructor( private noteService:NoteServiceService, private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
   }
 archieveNote(){
-   {
-    this.noteService.archieveNote(this.note.id).subscribe((response) => {
+  console.log('id---',this.note.id);
+  
+   
+    this.noteService.archieveNote(this.note).subscribe((response) => {
      
       if (this.note.isArchieved == true) {
 
@@ -33,8 +35,7 @@ archieveNote(){
 
     },
       error => {
-        this.snackBar.open("error in Note thrash operation", "OK", { duration: 5000 });
+        this.snackBar.open("error in Note archieve operation", "OK", { duration: 5000 });
       });
   }
-}
 }
