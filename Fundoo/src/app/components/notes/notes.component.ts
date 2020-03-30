@@ -23,7 +23,18 @@ export class NotesComponent implements OnInit {
      private router: Router) { }
 
   ngOnInit() {
-   this.displayNotes();
+    this.route
+    .queryParams
+    .subscribe(params => {
+      this.param = params['page'] || '';
+      if (this.param == "archive") {
+        console.log("elseif archive");
+        this.getArchieveNote();
+      }
+      else{
+      this.displayNotes();
+      }
+    });
   }
 
   public displayNotes() {

@@ -14,16 +14,10 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     
   }
-  notes(){
-    this.router.navigate(['/dashboard/notes']);
-    
-  }
+  
   onsignout(){
     localStorage.clear;
     this.router.navigate(['/login'])
   }
-  archieve(){
-    this.router.navigate(['/dashboard/archieve'])
-  }
-
+  
 }
