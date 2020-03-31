@@ -47,7 +47,7 @@ export class NoteServiceService{
         console.log("lp3")
     }
     pinNote(note:any): Observable<any> { 
-        return this.httpservice.get(this.API_URL+environment.pinNote+note.id,{headers:new HttpHeaders({'token':this.token})});
+        return this.httpservice.put(this.API_URL+environment.pinNote+note.id,{},{headers:new HttpHeaders({'token':this.token})});
         
     }
     getArchieveNote(): Observable<any> { 
