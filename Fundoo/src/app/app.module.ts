@@ -11,8 +11,10 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { FlexLayoutModule } from "@angular/flex-layout";
 
 
+import {MatMenuModule} from '@angular/material/menu';
 
 
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 import {MatIconModule} from '@angular/material/icon';
 import { AppRoutingModule } from './app-routing.module';
@@ -69,7 +71,9 @@ import { ArchieveComponent } from './components/archieve/archieve.component';
     MatToolbarModule,
     MatDialogModule,
     FlexLayoutModule,
-    MatDividerModule
+    MatDividerModule,
+    MatMenuModule,
+    MatTooltipModule
     
   ],
   providers: [HttpClient],

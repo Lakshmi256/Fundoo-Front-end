@@ -11,11 +11,13 @@ import { NoteServiceService } from 'src/app/service/noteservice.service';
 export class IconsComponent implements OnInit {
   @Input() note: Note;
   id: number;
-  isArchieved: boolean = false;
+ 
   constructor( private noteService:NoteServiceService, private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
   }
+
+  
 archieveNote(){
   console.log('id---',this.note.id);
   
@@ -38,4 +40,35 @@ archieveNote(){
         this.snackBar.open("error in Note archieve operation", "OK", { duration: 5000 });
       });
   }
+  arrayOfColors = [
+    [
+      { color: "white", name: "white" },
+      { color: "red", name: "red" },
+      { color: "rgb(255, 153, 0)", name: "orange" },
+      { color: "rgb(200, 232, 104)", name: "yellow" },
+      
+    
+      
+    ],
+    [
+      
+      { color: "rgb(97, 191, 82)", name: "green" },
+      {color:"rgb(185, 247, 238)",name:"teal"},
+      { color: "rgb(153, 221, 255)", name: "light blue" },
+      { color: "darkblue", name: "darkblue" },
+     
+    ],
+    [
+
+      { color: "purple", name: "purple" },
+      { color: "deeppink", name: "pink" },
+      { color: " brown", name: "brown" },
+      { color: "slategray", name: "grey" },
+    
+     
+    ]
+  ]
+  // setColor(color){
+
+  // }
 }
