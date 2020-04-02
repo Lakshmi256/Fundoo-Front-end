@@ -31,7 +31,7 @@ export class PinNotesComponent implements OnInit {
         this.matSnackBar.open("Note unPinned Successfully", 'Ok', { duration: 3000 });
       }
       else if (!this.note.isPinned) {
-        this.isPinned = true;
+        this.isPinned = false;
         this.matSnackBar.open("Note Pinned Successfully", 'Ok', { duration:3000 });
       
       }

@@ -2,6 +2,7 @@ export const environment = {
   production: false,
   apiUrl:'http://localhost:8080/users',
   notesUrl:'http://localhost:8080/notes',
+  labelsUrl:'http://localhost:8080/labels',
 
 
   registerUrl:'/register',
@@ -19,9 +20,9 @@ export const environment = {
   getPinNote:'/getPinned',
   getArchieveNote:'/getArchieve',
   getTrashNotes:'/gettrashed',
-  addcolor:'/addcolor/'
+  addcolor:'/addcolor/',
 
-
+getalllabels:'/getlabels'
 
 
 };

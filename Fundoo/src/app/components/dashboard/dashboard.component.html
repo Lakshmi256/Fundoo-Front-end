@@ -1,102 +1,105 @@
 <div class="container">
-    <div>
-        <mat-toolbar >
-        <mat-toolbar-row>
-         
-          <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
-          <img class="image" src="assets/icons/lp.jpg" alt="Keep">
-          <span><mat-label style="font-family: sans-serif; padding-left: 5px;">Keep</mat-label>
-          </span>
-          <div class="search">
-          <button mat-icon-button class="search-icon">
-            <mat-icon>search</mat-icon>
-          </button>
-          <input class="searchInput" placeholder="Search" >
-          <button mat-icon-button class="cancel">
-            <mat-icon>clear</mat-icon>
-          </button>
-        </div>
-        <div class="rightside">
-          <button mat-icon-button class="refresh">
-            <mat-icon>refresh</mat-icon>
-          </button>
-          <button mat-icon-button class="list">
-            <mat-icon>grid_view</mat-icon>
-          </button>
-          <button mat-icon-button class="sttings">
-            <mat-icon>settings</mat-icon>
-          </button>
-          <button mat-icon-button class="apps"(click)="onsignout()">
-            <mat-icon>apps</mat-icon>
-          </button>
-        </div>
-        </mat-toolbar-row>
-       </mat-toolbar>
-    </div>
-   <div class="upmat" >
-    <mat-sidenav-container  >
-       <mat-sidenav #snav mode="side" class="matsidenav"> 
-
-         <div class="notediv">
-          <a [routerLink]="['notes']" [queryParams]="{ page: 'display' }">
-
-          <button mat-button class="notebutton" >
-            <div class="icondiv">
-              <mat-icon>lightbulb_outline</mat-icon>
-            </div>
-            <span > Notes</span>
-          </button>
-        
-        </a>
-      
-          <button mat-button class="remindbutton">
-            <div class="icondiv">
-              <mat-icon>notifications</mat-icon>
-            </div>
-            <span>Reminder</span>
-          </button>
-        </div>
-        <mat-divider></mat-divider>
-        
-        <diV class="labeldiv">
-          <mat-label class="labelmat">LABELS</mat-label>
-          
-          <button mat-button class="labelbutton">
-            <div class="icondiv">
-              <mat-icon>edit</mat-icon>
-            </div>
-            <span >Edit labels</span>
-          </button>
-        </diV>
-  
-        <mat-divider></mat-divider>
-        <diV class="notediv">
-          <a [routerLink]="['notes']" [queryParams]="{ page: 'archive' }">
-
-          <button mat-button class="notebutton" >
-            <div class="icondiv">
-              <mat-icon>archive</mat-icon>
-            </div>
-            <span > Archive</span>
-          </button>
-      </a>
-      <a [routerLink]="['notes']" [queryParams]="{ page: 'trash' }">
-          <button mat-button class="remindbutton">
-            <div class="icondiv">
-              <mat-icon>delete</mat-icon>
-            </div>
-            <span>Trashed</span>
-          </button>
-        </a>
-        </diV>
-  
-        
-  
-        <mat-divider></mat-divider>
-       </mat-sidenav>
-      <mat-sidenav-content >
-        <router-outlet ></router-outlet>
-     </mat-sidenav-content>
-    </mat-sidenav-container>
-    </div>
+  <div>
+      <mat-toolbar >
+      <mat-toolbar-row>
+       
+        <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+        <img class="image" src="assets/icons/lp.jpg" alt="Keep">
+        <span><mat-label style="font-family: sans-serif; padding-left: 5px;">Keep</mat-label>
+        </span>
+        <div class="search">
+        <button mat-icon-button class="search-icon">
+          <mat-icon>search</mat-icon>
+        </button>
+        <input class="searchInput" placeholder="Search" >
+        <button mat-icon-button class="cancel">
+          <mat-icon>clear</mat-icon>
+        </button>
+      </div>
+      <div class="rightside">
+        <button mat-icon-button class="refresh">
+          <mat-icon>refresh</mat-icon>
+        </button>
+        <button mat-icon-button class="list">
+          <mat-icon>grid_view</mat-icon>
+        </button>
+        <button mat-icon-button class="sttings">
+          <mat-icon>settings</mat-icon>
+        </button>
+        <button mat-icon-button class="apps"(click)="onsignout()">
+          <mat-icon>apps</mat-icon>
+        </button>
+      </div>
+      </mat-toolbar-row>
+     </mat-toolbar>
   </div>
+ <div class="upmat" >
+  <mat-sidenav-container  >
+     <mat-sidenav #snav mode="side" class="matsidenav"> 
+
+       <div class="notediv">
+        <a [routerLink]="['notes']" [queryParams]="{ page: 'display' }">
+
+        <button mat-button class="notebutton" >
+          <div class="icondiv">
+            <mat-icon>lightbulb_outline</mat-icon>
+          </div>
+          <span > Notes</span>
+        </button>
+      
+      </a>
+    
+        <button mat-button class="remindbutton">
+          <div class="icondiv">
+            <mat-icon>notifications</mat-icon>
+          </div>
+          <span>Reminder</span>
+        </button>
+      </div>
+      <mat-divider></mat-divider>
+      
+      <diV class="labeldiv">
+        
+        <mat-label class="labelmat">LABELS</mat-label>
+        <button *ngFor="let label of labels" class="labelbutton">
+            {{label.name}}  
+        </button><br>
+        <button mat-button class="labelbutton">
+          <div class="icondiv">
+            <mat-icon>edit</mat-icon>
+          </div>
+          <span >Edit labels</span>
+        </button>
+      </diV>
+
+      <mat-divider></mat-divider>
+      <diV class="notediv">
+        <a [routerLink]="['notes']" [queryParams]="{ page: 'archive' }">
+
+        <button mat-button class="notebutton" >
+          <div class="icondiv">
+            <mat-icon>archive</mat-icon>
+          </div>
+          <span > Archive</span>
+        </button>
+    </a>
+    <a [routerLink]="['notes']" [queryParams]="{ page: 'trash' }">
+        <button mat-button class="remindbutton">
+          <div class="icondiv">
+            <mat-icon>delete</mat-icon>
+          </div>
+          <span>Trashed</span>
+        </button>
+      </a>
+      </diV>
+
+      
+
+      <mat-divider></mat-divider>
+     </mat-sidenav>
+    <mat-sidenav-content >
+      <router-outlet ></router-outlet>
+   </mat-sidenav-content>
+  </mat-sidenav-container>
+  </div>
+</div>
