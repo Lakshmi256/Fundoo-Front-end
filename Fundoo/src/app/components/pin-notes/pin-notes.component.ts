@@ -29,12 +29,11 @@ export class PinNotesComponent implements OnInit {
       if (this.note.isPinned) {
         this.isPinned = true;
         this.matSnackBar.open("Note unPinned Successfully", 'Ok', { duration: 3000 });
-        // this.dialogRef.close();
       }
       else if (!this.note.isPinned) {
         this.isPinned = true;
         this.matSnackBar.open("Note Pinned Successfully", 'Ok', { duration:3000 });
-        // this.dialogRef.close();
+      
       }
       console.log(response);
       // this.dialogRef.close();

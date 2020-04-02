@@ -23,7 +23,7 @@
         <div>
             <div fxLayout="row" fxLayoutGap="10px" style="margin-top: 1px" *ngFor="let colors of arrayOfColors">
                 <div *ngFor="let color of colors">
-                    <button [ngStyle]="{ 'background-color': color.color }" 
+                    <button [ngStyle]="{ 'background-color': color.color }"(click)="setColor((color.color)) "
                         matTooltip="{{ color.name }}" mat-mini-fab></button>
 
                 </div>

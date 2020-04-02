@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
 
       localStorage.setItem("token",Response.token)
 
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/dashboard/notes']);
     
       this.showMsg = true;
       this.submitted = true;

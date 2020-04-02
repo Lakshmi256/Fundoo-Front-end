@@ -19,6 +19,7 @@ export const environment = {
   getPinNote:'/getPinned',
   getArchieveNote:'/getArchieve',
   getTrashNotes:'/gettrashed',
+  addcolor:'/addcolor/'
 
 
 

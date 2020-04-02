@@ -2,7 +2,7 @@
 <div style="flex-wrap: wrap;">
     <div class="getAllNotes" fxLayout="{{view}}" fxFlexOffset="15" style="flex-direction: row;  display: flex; margin-left: 15%;">
         <mat-card class="getNotesMat" 
-              *ngFor="let note of pinnotes" >
+              *ngFor="let note of pinnotes" [ngStyle]="{'background':note.colour}" >
             <div>
                 <div class="pinNotes">
                     <button *ngIf="!isPinned" mat-icon-button matTooltip="pin" class="button">
@@ -26,7 +26,7 @@
 <div style="flex-wrap: wrap;">
     <div class="getAllNotes" fxLayout="{{view}}" fxFlexOffset="15" style="flex-direction: row; box-sizing: border-box; display: flex; margin-left: 15%;">
         <mat-card class="getNotesMat" 
-              *ngFor="let note of notes" >
+              *ngFor="let note of notes" [ngStyle]="{'background':note.colour}">
             <div>
                 <div class="pinNotes">
                     <app-pin-notes [note]="note" ></app-pin-notes>

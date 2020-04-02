@@ -40,6 +40,14 @@ archieveNote(){
         this.snackBar.open("error in Note archieve operation", "OK", { duration: 5000 });
       });
   }
+  setColor( color){
+this.noteService.colorNote(this.note,color).subscribe((Response) =>{
+
+})
+}
+
+
+
   arrayOfColors = [
     [
       { color: "white", name: "white" },
