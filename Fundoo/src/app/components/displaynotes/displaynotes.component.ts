@@ -3,6 +3,7 @@ import { Note } from 'src/app/model/note';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router, ActivatedRoute } from '@angular/router';
 import { GetnotesService } from 'src/app/service/getnotes.service';
+import { UpdatenotesComponent } from '../updatenotes/updatenotes.component';
 
 @Component({
   selector: 'app-displaynotes',
@@ -21,7 +22,7 @@ export class DisplaynotesComponent implements OnInit {
   trash:boolean=false;
   archieve:boolean=false;
 
-  constructor(private Notes:GetnotesService,
+  constructor(private Notes:GetnotesService,private dialog: MatDialog,
      private router: Router,private route:ActivatedRoute) { 
        
      }
@@ -66,5 +67,16 @@ export class DisplaynotesComponent implements OnInit {
     this.trash=false;
     this.archieve=true;
     this.notes=this.Notes.getarchieveNotesList()
+  }
+  openDialog(note): void {
+    console.log("note Id:" + note.id);
+    const dialogRef = this.dialog.open(UpdatenotesComponent, {
+      width: 'auto',
+      panelClass: 'custom-dialog-container',
+      data: { note }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
 }

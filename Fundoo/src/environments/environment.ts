@@ -21,6 +21,7 @@ export const environment = {
   getArchieveNote:'/getArchieve',
   getTrashNotes:'/gettrashed',
   addcolor:'/addcolor/',
+ 
 
 getalllabels:'/getlabels'
 
