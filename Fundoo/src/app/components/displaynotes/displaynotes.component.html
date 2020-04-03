@@ -1,4 +1,4 @@
-<div style="padding-left: 100px;font-family: fantasy;color: darkgray;" *ngIf="!trash && !archieve">Pinnotes
+<div style="padding-left: 100px;font-family: fantasy;color: darkgray;" *ngIf="!trash && !archieve &&!searchNotes ">Pinnotes
 <div style="flex-wrap: wrap;">
     <div class="getAllNotes" fxLayout="{{view}}" fxFlexOffset="15" style="flex-direction: row;  display: flex; margin-left: 15%;">
         <mat-card class="getNotesMat" 
@@ -12,9 +12,9 @@
                 <mat-card-title (click)="openDialog(note)">
                     {{note.title}}
                 </mat-card-title >
-                    <br>
+                    <br><div (click)="openDialog(note)">
                     {{note.description}}
-          
+                </div>
             </div>
             <app-icons [note]='note' ></app-icons>
         </mat-card>
@@ -26,7 +26,7 @@
 <div style="flex-wrap: wrap;">
     <div class="getAllNotes" fxLayout="{{view}}" fxFlexOffset="15" style="flex-direction: row; box-sizing: border-box; display: flex; margin-left: 15%;">
         <mat-card class="getNotesMat" 
-              *ngFor="let note of notes" [ngStyle]="{'background':note.colour}">
+              *ngFor="let note of notes | searchnote:searchnote" [ngStyle]="{'background':note.colour}">
             <div>
                 <div class="pinNotes">
                     <app-pin-notes [note]="note" ></app-pin-notes>
@@ -34,8 +34,9 @@
             <mat-card-title (click)="openDialog(note)">
                     {{note.title}}
                 </mat-card-title >
-                    <br>
+                <br><div (click)="openDialog(note)">
                     {{note.description}}
+                </div>
             </div>
           <app-icons [note]='note' ></app-icons>
         </mat-card>

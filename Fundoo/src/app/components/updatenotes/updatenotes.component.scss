@@ -11,23 +11,7 @@
     border: none;
     outline: none;
   }
-  mat-card {
-    width: 47em;
-    border-radius: 13px;
-    padding: 0px;
-    margin: 0pc;
-  }
-  .mat-dialog-container {
-    padding: 0px !important;
-  }
-  mat-dialog-content {
-    margin: 0px;
-  }
-  .mat-card:not([class*="mat-elevation-z"]) {
-    box-shadow: 2px 2px 2px 2px;
-    border: none;
-    outline: none;
-  }
+  
   textarea {
     border: none;
     height: 1.2em;

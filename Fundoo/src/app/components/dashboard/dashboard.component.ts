@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Note } from 'src/app/model/note';
 import { Label } from 'src/app/model/label';
 import { LabelService } from 'src/app/service/label.service';
+import { GetnotesService } from 'src/app/service/getnotes.service';
 
 
 @Component({
@@ -13,7 +14,9 @@ import { LabelService } from 'src/app/service/label.service';
 export class DashboardComponent implements OnInit {
   labels: Label[];
   notes: Note[];
-  constructor(private router:Router,private labelService:LabelService) { }
+  title: String;
+  description: String;
+  constructor(private router:Router,private labelService:LabelService,private setnotes:GetnotesService) { }
 
   ngOnInit(): void {
     this.getlabels()
@@ -29,6 +32,10 @@ this.labelService.getAlllabel().subscribe(
   onsignout(){
     localStorage.clear;
     this.router.navigate(['/login'])
+  }
+  searchNote() {
+    console.log();
+    this.setnotes.setSearchNoteData(this.title||this.description);
   }
   
 }

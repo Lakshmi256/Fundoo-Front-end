@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Note } from '../model/note';
+import { Subject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,7 @@ notes:Note[]
 pinNoteList:Note[]
 archievenotes:Note[]
 trashednotes:Note[]
+private searchNoteData=new Subject<any>();
   constructor() { }
 
 
@@ -39,5 +41,11 @@ trashednotes:Note[]
   }
   getTrashedNotesList() {
    return this.trashednotes
+  }
+  setSearchNoteData(message:any){
+    return this.searchNoteData.next({notes:message});
+  }
+  getSearchNoteData():Observable<any>{
+    return this.searchNoteData.asObservable();
   }
 }

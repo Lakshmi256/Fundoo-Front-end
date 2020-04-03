@@ -36,6 +36,8 @@ import { IconsComponent } from './components/icons/icons.component';
 import { SingleNoteComponent } from './components/single-note/single-note.component';
 import { ArchieveComponent } from './components/archieve/archieve.component';
 import { UpdatenotesComponent } from './components/updatenotes/updatenotes.component';
+import { NotePipe } from './components/pipe/note.pipe';
+import { SearchnotePipe } from './components/pipe/searchnote.pipe';
 
 
 
@@ -55,6 +57,8 @@ import { UpdatenotesComponent } from './components/updatenotes/updatenotes.compo
     SingleNoteComponent,
     ArchieveComponent,
     UpdatenotesComponent,
+    NotePipe,
+    SearchnotePipe,
   
   ],
   imports: [

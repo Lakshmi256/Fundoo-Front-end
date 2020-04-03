@@ -21,7 +21,8 @@ export class DisplaynotesComponent implements OnInit {
   unpinnotes:Note[];
   trash:boolean=false;
   archieve:boolean=false;
-
+  searchnote:any;
+  searchNotes:boolean;
   constructor(private Notes:GetnotesService,private dialog: MatDialog,
      private router: Router,private route:ActivatedRoute) { 
        
@@ -44,7 +45,7 @@ export class DisplaynotesComponent implements OnInit {
       this.displayNotes();
       }
     });
-   
+    this.getSearchNoteData();
   }
 
   displayNotes() {
@@ -77,6 +78,16 @@ export class DisplaynotesComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
+    });
+  }
+  getSearchNoteData(){
+    this.Notes.getSearchNoteData().subscribe((message)=>{
+      console.log("search data",message.notes);
+        this.searchnote=message.notes;
+        this.searchNotes=true;
+        if(message.notes==""){
+          this.searchNotes=false;
+        }
     });
   }
 }
