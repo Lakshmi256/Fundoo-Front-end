@@ -34,8 +34,9 @@ this.labelService.getAlllabel().subscribe(
     this.router.navigate(['/login'])
   }
   searchNote() {
-    console.log();
-    this.setnotes.setSearchNoteData(this.title||this.description);
+    
+    this.setnotes.setSearchNoteData(this.title);
+    //this.setnotes.setSearchNoteData(this.description);
   }
-  
+ 
 }

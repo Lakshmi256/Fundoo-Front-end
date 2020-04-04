@@ -7,10 +7,10 @@
     <textarea id="desc" style="border: none; " matInput type="text" class="input sizeof" placeholder="Take a note"
         [(ngModel)]="note.description"></textarea>
     <div class="lastEdit">
-        <span>updated at:{{note.upDateAndTime}}</span>
+        <!-- <span>updated at:{{note.upDateAndTime}}</span> -->
     </div>
     <div class="icon" mat-dialog-actions>
-        <app-icons class="app-note-list sizeof"></app-icons>
+        <app-icons class="sizeof"></app-icons>
         <div class="div-button" button (click)="onSubmit()"><button
                 style="border: none; padding-right: 45px;">Close</button></div>
     </div>

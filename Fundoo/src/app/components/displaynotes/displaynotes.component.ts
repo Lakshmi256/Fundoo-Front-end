@@ -84,6 +84,7 @@ export class DisplaynotesComponent implements OnInit {
     this.Notes.getSearchNoteData().subscribe((message)=>{
       console.log("search data",message.notes);
         this.searchnote=message.notes;
+        this.note=message.notes;
         this.searchNotes=true;
         if(message.notes==""){
           this.searchNotes=false;

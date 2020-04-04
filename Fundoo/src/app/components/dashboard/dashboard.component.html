@@ -59,11 +59,11 @@
       <mat-divider></mat-divider>
       
       <diV class="labeldiv">
-        
-        <mat-label class="labelmat">LABELS</mat-label>
-        <button *ngFor="let label of labels" class="labelbutton">
-            {{label.name}}  
-        </button><br>
+  
+        <mat-label class="labelmat">
+        <button *ngFor="let label of labels"  mat-button class="labelbutton">
+           <span> {{label.name}}  </span>
+        </button></mat-label>
         <button mat-button class="labelbutton">
           <div class="icondiv">
             <mat-icon>edit</mat-icon>
