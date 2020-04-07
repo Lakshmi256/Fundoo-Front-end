@@ -45,5 +45,15 @@
 </button>
 </div>
 
-   
+<div >
+    <a><img mat-icon-button [matMenuTriggerFor]="menu" style="height: 1.5em; width: 2em;" src="assets/icons/more.svg" 
+            matTooltip="More"></a>
+
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="onClickDelete()">Delete Note</button>
+        
+        <button mat-menu-item (click)="openDialog(note)">Add Label</button>
+        </mat-menu>
+        </div>
+
 </div>

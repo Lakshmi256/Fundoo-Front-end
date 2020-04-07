@@ -15,6 +15,7 @@ import {MatMenuModule} from '@angular/material/menu';
 
 
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 import {MatIconModule} from '@angular/material/icon';
 import { AppRoutingModule } from './app-routing.module';
@@ -38,6 +39,8 @@ import { ArchieveComponent } from './components/archieve/archieve.component';
 import { UpdatenotesComponent } from './components/updatenotes/updatenotes.component';
 import { NotePipe } from './components/pipe/note.pipe';
 import { SearchnotePipe } from './components/pipe/searchnote.pipe';
+import { EditlabelComponent } from './components/editlabel/editlabel.component';
+import { LabelComponent } from './components/label/label.component';
 
 
 
@@ -59,6 +62,8 @@ import { SearchnotePipe } from './components/pipe/searchnote.pipe';
     UpdatenotesComponent,
     NotePipe,
     SearchnotePipe,
+    EditlabelComponent,
+    LabelComponent,
   
   ],
   imports: [
@@ -79,7 +84,8 @@ import { SearchnotePipe } from './components/pipe/searchnote.pipe';
     FlexLayoutModule,
     MatDividerModule,
     MatMenuModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatCheckboxModule
     
   ],
   providers: [HttpClient],

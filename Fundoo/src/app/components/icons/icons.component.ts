@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Note } from 'src/app/model/note';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { NoteServiceService } from 'src/app/service/noteservice.service';
+import { MatDialog } from '@angular/material/dialog';
+import { LabelComponent } from '../label/label.component';
 
 @Component({
   selector: 'app-icons',
@@ -12,7 +14,7 @@ export class IconsComponent implements OnInit {
   @Input() note: Note;
   id: number;
  
-  constructor( private noteService:NoteServiceService, private snackBar: MatSnackBar) { }
+  constructor( private dialog: MatDialog,private noteService:NoteServiceService, private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
   }
@@ -45,7 +47,16 @@ this.noteService.colorNote(this.note,color).subscribe((Response) =>{
 
 })
 }
+onClickDelete() {
+  this.noteService.deleteNote(this.note).subscribe((response) => {
+    this.snackBar.open("Note trashed", 'ok', { duration: 5000 });
+  },
+    error => {
+      this.snackBar.open("error in Note Deletion", 'ok', { duration: 5000 });
 
+    }
+  );
+}
 
 
   arrayOfColors = [
@@ -76,7 +87,17 @@ this.noteService.colorNote(this.note,color).subscribe((Response) =>{
      
     ]
   ]
-  // setColor(color){
+  openDialog(note): void {
+   
+    const dialogRef = this.dialog.open(LabelComponent, {
+      width: '250px',
+      height: 'auto',
 
-  // }
+      data: { note }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+    
+    });
+  }
+
 }

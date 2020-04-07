@@ -1,0 +1,30 @@
+<p>Edit label</p>
+<div fxLayout="row" fxLayoutGap="5%">
+  <div fxFlex="10%">
+    <mat-icon >clear</mat-icon>
+  </div>
+  <div>
+    <input type="text" style="width: 280px; height: 30px;" placeholder="Create Label" 
+        [(ngModel)]="label.name">
+</div>
+  <div fxFlex="10%">
+    <button>
+    <mat-icon  (click)="onClickCreateLabel(label)">done</mat-icon></button>
+  </div>
+</div>
+
+<div *ngFor="let label of labels">
+  <div fxLayout=row>
+    <div fxFlex=10%><button>
+      <mat-icon class="icon" (click)= "onClickDeleteLabel(label)">delete</mat-icon></button>
+    </div>
+    <div fxFlex=70% class="textarea" contenteditable="true" id="text" #labl>
+      {{label.name}}</div>
+    <div fxFlex=10%>
+      <button>
+      <mat-icon class="icon">edit</mat-icon></button>
+    </div>
+  </div>
+</div>
+
+<button mat-button style="float:right" >Done</button>

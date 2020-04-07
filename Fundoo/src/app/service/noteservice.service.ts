@@ -65,6 +65,10 @@ export class NoteServiceService{
         return this.httpservice.put(this.API_URL+environment.archieveNote+note.id,{},{headers:new HttpHeaders({'token':this.token})});
         
     }
+    deleteNote(note:any): Observable<any> { 
+        return this.httpservice.delete(this.API_URL+environment.deleteNote+note.id,{headers:new HttpHeaders({'token':this.token})});
+        
+    }
     colorNote(note:any,color:String): Observable<any> { 
         return this.httpservice.post(this.API_URL+environment.addcolor+note.id+'?color='+color,{},{headers:new HttpHeaders({'token':this.token})});
         

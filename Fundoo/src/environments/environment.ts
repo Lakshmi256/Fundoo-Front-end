@@ -15,16 +15,17 @@ export const environment = {
   updateNote:'/update',
   pinNote:'/pin/',
   getAllNotes:'/getallnotes',
-  deleteNote:'/delete',
+  deleteNote:'/delete/',
   archieveNote:'/archieve/',
   getPinNote:'/getPinned',
   getArchieveNote:'/getArchieve',
   getTrashNotes:'/gettrashed',
   addcolor:'/addcolor/',
- 
+ createadmap:'/createandmap/',
+ maplabel:'/addlabel/',
 
-getalllabels:'/getlabels'
-
-
+getalllabels:'/getlabels',
+createlabel:'/create',
+deletelabel:'/delete',
 };
 

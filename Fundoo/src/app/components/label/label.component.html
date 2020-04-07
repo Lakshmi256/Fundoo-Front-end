@@ -1,0 +1,19 @@
+<div>
+    <div class="search-label">
+        <div>
+        <input type="text" placeholder="Search"   [(ngModel)]="label.name" >
+        </div>
+        <div  (click)="onClickCreateLabel(noteId)">
+           <a>
+              <button mat-button style="float:right"matTooltip="Create Label" style=" padding-left: 10px;">Done</button></a>
+        </div>
+    </div>
+    <div class="label-list">
+        <div *ngFor="let label of labels" style="margin-right: initial;">
+            <mat-checkbox ></mat-checkbox>
+           
+            <label mat-menu-item style="display:inline"
+               >{{label.name}}</label>
+        </div>
+    </div>
+</div>

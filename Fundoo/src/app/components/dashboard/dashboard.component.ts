@@ -5,6 +5,9 @@ import { Label } from 'src/app/model/label';
 import { LabelService } from 'src/app/service/label.service';
 import { GetnotesService } from 'src/app/service/getnotes.service';
 
+import { EditlabelComponent } from '../editlabel/editlabel.component';
+import { MatDialog } from '@angular/material/dialog';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -16,7 +19,9 @@ export class DashboardComponent implements OnInit {
   notes: Note[];
   title: String;
   description: String;
-  constructor(private router:Router,private labelService:LabelService,private setnotes:GetnotesService) { }
+ label:Label=new Label()
+ 
+  constructor(private router:Router,private labelService:LabelService,private setnotes:GetnotesService,private dialog: MatDialog,) { }
 
   ngOnInit(): void {
     this.getlabels()
@@ -38,5 +43,15 @@ this.labelService.getAlllabel().subscribe(
     this.setnotes.setSearchNoteData(this.title);
     //this.setnotes.setSearchNoteData(this.description);
   }
- 
+  openDialog(labels:Label[]): void {
+    const dialogRef = this.dialog.open(EditlabelComponent, {
+      width: '400px',
+      height: 'auto',
+
+      data: { labels }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+   
+    });
+  }
 }
