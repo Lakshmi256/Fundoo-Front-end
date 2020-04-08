@@ -41,6 +41,10 @@ export class DisplaynotesComponent implements OnInit {
        
         this.getTrashNote();
       }
+      else  if (this.param == "labels") {
+       
+        this.getlabelnotes();
+      }
       else{
       this.displayNotes();
       }
@@ -90,5 +94,8 @@ export class DisplaynotesComponent implements OnInit {
           this.searchNotes=false;
         }
     });
+  }
+  getlabelnotes(){
+    this.notes=this.Notes.getlabelNotes();
   }
 }

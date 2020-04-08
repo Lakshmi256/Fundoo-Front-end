@@ -10,6 +10,7 @@ notes:Note[]
 pinNoteList:Note[]
 archievenotes:Note[]
 trashednotes:Note[]
+labelnotes:Note[]
 private searchNoteData=new Subject<any>();
   constructor() { }
 
@@ -47,5 +48,11 @@ private searchNoteData=new Subject<any>();
   }
   getSearchNoteData():Observable<any>{
     return this.searchNoteData.asObservable();
+  }
+  setlabelNotes(message: Note[]) {
+    this.labelnotes=message
+  }
+  getlabelNotes() {
+   return this.labelnotes
   }
 }

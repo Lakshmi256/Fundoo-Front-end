@@ -45,7 +45,7 @@ this.labelService.getAlllabel().subscribe(
   }
   openDialog(labels:Label[]): void {
     const dialogRef = this.dialog.open(EditlabelComponent, {
-      width: '400px',
+      width: '450px',
       height: 'auto',
 
       data: { labels }

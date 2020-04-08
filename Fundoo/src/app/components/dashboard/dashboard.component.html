@@ -60,13 +60,14 @@
       
       <diV class="labeldiv">
   
-        
+        <a [routerLink]="['notes']" [queryParams]="{ page: 'labels' }">
         <button *ngFor="let label of labels"  mat-button class="labelbutton">
           <div class="icondiv">
           <img src="assets/icons/label.svg"  style="margin-right: 10%;">
         </div>
            <span> {{label.name}}  </span>
         </button>
+        </a>
         <button mat-button class="labelbutton" (click)="openDialog(labels)">
           <div class="icondiv">
             <mat-icon>edit</mat-icon>

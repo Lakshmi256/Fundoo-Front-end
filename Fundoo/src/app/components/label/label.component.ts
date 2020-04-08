@@ -39,11 +39,19 @@ export class LabelComponent implements OnInit {
       
       this.labelservice.createlabel(this.label).subscribe((response)=>{
         this.matSnackBar.open("Label Created","Ok",{duration:3000});
-        this.labelId=response.data;
+        
       });
       this.labelservice.addlabel(this.labelId,noteId).subscribe((response)=>{
         this.matSnackBar.open("Label Created","Ok",{duration:3000});
       });
     }
-    
+    onCheckedAddLabel(labelId) {
+      console.log("mat on checked label called");
+      this.labelservice.addlabel(labelId,this.noteId).subscribe((response)=>{
+        this.matSnackBar.open("label mapped", "Ok", { duration: 3000 });
+      },
+        (error) => {
+          this.matSnackBar.open("error", "Ok", { duration: 3000 });
+        });
+    }
 }

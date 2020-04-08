@@ -23,7 +23,7 @@ export const environment = {
   addcolor:'/addcolor/',
  createadmap:'/createandmap/',
  maplabel:'/addlabel/',
-
+getlabelnotes:'/getlabelsnotes/',
 getalllabels:'/getlabels',
 createlabel:'/create',
 deletelabel:'/delete',

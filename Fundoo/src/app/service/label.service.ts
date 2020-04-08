@@ -51,4 +51,10 @@ addlabel(labelId :any,noteId:any): Observable<any> {
   return this.httpservice.post(this.API_URL+environment.maplabel+labelId+'?noteId='+noteId,{},{headers:new HttpHeaders({'token':this.token})});
  
 }
+getlabelnotes(labelId :any): Observable<any> { 
+       
+  return this.httpservice.post(this.API_URL+environment.getlabelnotes+'?labelId='+labelId,{},{headers:new HttpHeaders({'token':this.token})});
+ 
+}
+
 }
