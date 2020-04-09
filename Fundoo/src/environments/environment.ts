@@ -3,7 +3,7 @@ export const environment = {
   apiUrl:'http://localhost:8080/users',
   notesUrl:'http://localhost:8080/notes',
   labelsUrl:'http://localhost:8080/labels',
-
+ addcolalb:'http://localhost:8080/collabrator/add',
 
   registerUrl:'/register',
   loginUrl:'/login',

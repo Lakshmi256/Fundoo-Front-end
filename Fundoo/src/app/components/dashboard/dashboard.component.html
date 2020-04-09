@@ -20,9 +20,16 @@
         <button mat-icon-button class="refresh">
           <mat-icon>refresh</mat-icon>
         </button>
-        <button mat-icon-button class="list">
-          <mat-icon>grid_view</mat-icon>
-        </button>
+
+      
+          <button mat-icon-button  *ngIf="list" (click)="changeView()" fxShow="true" fxHide.lt-sm="true">
+            <mat-icon class="icon">grid_view</mat-icon>
+          </button>
+    
+          <button mat-icon-button  *ngIf="grid" (click)="changeView()" fxShow="true" fxHide.lt-sm="true">
+            <mat-icon class="icon">view_module</mat-icon>
+          </button>
+        
         <button mat-icon-button class="sttings">
           <mat-icon>settings</mat-icon>
         </button>

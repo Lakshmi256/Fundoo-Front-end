@@ -30,6 +30,9 @@ export class UserServiceService{
     resetPassword(user: any): Observable<any> { 
         return this.httpservice.put(this.API_URL+environment.resetPassword,user,{headers:new HttpHeaders({"token":localStorage.token})});
     }
+    addCollaborator(user: number,email:any): Observable<any> { 
+        return this.httpservice.post(environment.addcolalb+'?email='+email+'?noteId='+user,{},{headers:new HttpHeaders({"token":localStorage.token})});
+    }
     
 
 }

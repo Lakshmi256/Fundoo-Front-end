@@ -4,6 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { NoteServiceService } from 'src/app/service/noteservice.service';
 import { MatDialog } from '@angular/material/dialog';
 import { LabelComponent } from '../label/label.component';
+import { CollaboratorComponent } from '../collaborator/collaborator.component';
 
 @Component({
   selector: 'app-icons',
@@ -99,5 +100,14 @@ onClickDelete() {
     
     });
   }
+ 
+  collabrator(): void {
+    console.log("Note id in colab111111--->", this.note.id);
+    const dialogRef = this.dialog.open(CollaboratorComponent, {
+      width: 'auto',
+      height: '290px',
+      data: { noteId: this.note.id }
+    });
 
+}
 }

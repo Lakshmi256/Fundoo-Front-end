@@ -4,9 +4,9 @@ import { Note } from 'src/app/model/note';
 import { Label } from 'src/app/model/label';
 import { LabelService } from 'src/app/service/label.service';
 import { GetnotesService } from 'src/app/service/getnotes.service';
-
 import { EditlabelComponent } from '../editlabel/editlabel.component';
 import { MatDialog } from '@angular/material/dialog';
+import { ViewserviceService } from 'src/app/service/viewservice.service';
 
 
 @Component({
@@ -21,7 +21,7 @@ export class DashboardComponent implements OnInit {
   description: String;
  label:Label=new Label()
  labelnotes:Note[]
-  constructor(private router:Router,private labelService:LabelService,private notess:GetnotesService,private setnotes:GetnotesService,private dialog: MatDialog,) { }
+  constructor(private router:Router,private viewservice:ViewserviceService,private labelService:LabelService,private notess:GetnotesService,private setnotes:GetnotesService,private dialog: MatDialog,) { }
 
   ngOnInit(): void {
     this.getlabels()
@@ -64,5 +64,19 @@ this.labelService.getAlllabel().subscribe(
   }
   setlabelNotes(){
     this.notess.setlabelNotes(this.labelnotes);
+  }
+  list: boolean = true;
+  grid: boolean = false;
+
+  changeView() {
+    if (this.list) {
+      this.grid = true;
+      this.list = false;
+    }
+    else {
+      this.list = true;
+      this.grid = false;
+    }
+    this.viewservice.getView();
   }
 }
