@@ -40,10 +40,10 @@ export class NotesComponent implements OnInit {
        
         this.getTrashNote();
       }
-      else if (this.param == "labels") {
+      // else if (this.param == "labels") {
         
-        this.getLabelsNotes();
-      }
+      //   this.getLabelsNotes();
+      // }
       else{
       this.displayNotes();
       }

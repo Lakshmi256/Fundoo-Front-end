@@ -20,8 +20,8 @@ export class DashboardComponent implements OnInit {
   title: String;
   description: String;
  label:Label=new Label()
- 
-  constructor(private router:Router,private labelService:LabelService,private setnotes:GetnotesService,private dialog: MatDialog,) { }
+ labelnotes:Note[]
+  constructor(private router:Router,private labelService:LabelService,private notess:GetnotesService,private setnotes:GetnotesService,private dialog: MatDialog,) { }
 
   ngOnInit(): void {
     this.getlabels()
@@ -33,6 +33,8 @@ this.labelService.getAlllabel().subscribe(
     this.labels = data.labels;
     console.log(this.labels)
 })
+
+
   }
   onsignout(){
     localStorage.clear;
@@ -53,5 +55,14 @@ this.labelService.getAlllabel().subscribe(
     dialogRef.afterClosed().subscribe(result => {
    
     });
+  }
+  displaynotelabels(labelId){
+    this.labelService.getlabelnotes(labelId).subscribe((data)=>{
+      this.labelnotes=data.note;
+      this.setlabelNotes();
+    });
+  }
+  setlabelNotes(){
+    this.notess.setlabelNotes(this.labelnotes);
   }
 }

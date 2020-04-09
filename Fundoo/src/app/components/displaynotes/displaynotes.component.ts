@@ -61,6 +61,7 @@ export class DisplaynotesComponent implements OnInit {
       this.notes = this.Notes.getNotesList()
 
       this.pinnotes = this.Notes.getPinNotesList()
+console.log(this.pinnotes);
 
   }
   getTrashNote(){

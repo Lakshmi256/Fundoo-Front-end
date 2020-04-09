@@ -10,7 +10,7 @@ export const environment = {
   forgotpassurl:"/forgotpassword/",
   resetPassword:"/updatePassword/",
 
-
+getuser:'http://localhost:8080/user',
   createNote:"/create",
   updateNote:'/update',
   pinNote:'/pin/',
@@ -23,7 +23,7 @@ export const environment = {
   addcolor:'/addcolor/',
  createadmap:'/createandmap/',
  maplabel:'/addlabel/',
-getlabelnotes:'/getlabelsnotes/',
+getlabelnotes:'/getlabelsnotes',
 getalllabels:'/getlabels',
 createlabel:'/create',
 deletelabel:'/delete',

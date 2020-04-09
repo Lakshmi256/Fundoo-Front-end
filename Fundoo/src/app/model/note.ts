@@ -11,4 +11,6 @@ export class Note{
     createdDateAndTime:number;
     reminderStatus:boolean;
     upDateAndTime:number;
+    labelId:number;
+    list:any;
 }
