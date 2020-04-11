@@ -1,4 +1,4 @@
-<div style="padding-left: 100px;font-family: fantasy;color: darkgray;" *ngIf="!trash && !archieve &&!searchNotes ">Pinnotes
+<div style="padding-left: 100px;font-family: fantasy;color: darkgray;" *ngIf="!trash && !archieve &&!searchNotes &&!lab ">Pinnotes
 <div style="flex-wrap: wrap;">
     <div class="getAllNotes" fxLayout="{{direction}}" fxFlexOffset="15" style="flex-direction: row;  display: flex; margin-left: 15%;">
         <mat-card class="getNotesMat" 
@@ -12,10 +12,23 @@
                 <mat-card-title (click)="openDialog(note)">
                     {{note.title}}
                 </mat-card-title >
-                    <br><div (click)="openDialog(note)">
+                    <div (click)="openDialog(note)">
                     {{note.description}}
                 </div>
             </div>
+            <div *ngFor="let label of note.list">
+                <mat-chip>
+{{label.name}}
+<mat-icon matChipRemove (click)="removemapping(note.id,label.labelId)">cancel</mat-icon>
+</mat-chip>
+</div>
+            <div *ngIf="note.reminder!=null">
+                <mat-chip>
+                 {{note.reminder | date:'MMMM d'}},
+                 {{note.reminder | date:'shortTime'}}
+                 <mat-icon matChipRemove (click)="onDeleteRem(note)">cancel</mat-icon>
+               </mat-chip> 
+             </div>
             <app-icons [note]='note' ></app-icons>
         </mat-card>
     </div>
@@ -34,11 +47,37 @@
             <mat-card-title (click)="openDialog(note)">
                     {{note.title}}
                 </mat-card-title >
-                <br><div (click)="openDialog(note)">
+                <div (click)="openDialog(note)">
                     {{note.description}}
                 </div>
             </div>
+            <div *ngFor="let label of note.list">
+                <mat-chip>
+{{label.name}}
+<mat-icon matChipRemove (click)="removemapping(note.id,label.labelId)">cancel</mat-icon>
+</mat-chip>
+</div>
+            <div *ngIf="note.reminder!=null">
+                <mat-chip>
+                 {{note.reminder | date:'MMMM d'}},
+                 {{note.reminder | date:'shortTime'}}
+                 <mat-icon matChipRemove (click)="onDeleteRem(note)">cancel</mat-icon>
+               </mat-chip> 
+             </div>
+            <div *ngIf="!trash">
           <app-icons [note]='note' ></app-icons>
+        </div>
+          <div class="icon" *ngIf="trash">
+            <div class="rupesh">
+                <a><img class="img-style" src="assets/icons/delete-forever.svg"
+                        (click)="onClickDelete(note.id)" matTooltip="Delete forever"></a>
+            </div>
+
+            <div >
+                <a><img class="img-style" src="assets/icons/delete-restore.svg" (click)="onClickRestore(note.id)"
+                        matTooltip="Restore"></a>
+            </div>
+        </div>
         </mat-card>
     </div>
 </div>

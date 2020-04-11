@@ -73,8 +73,14 @@ export class NoteServiceService{
         return this.httpservice.post(this.API_URL+environment.addcolor+note.id+'?color='+color,{},{headers:new HttpHeaders({'token':this.token})});
         
     }
-
-
+    addremainder(note:any): Observable<any> { 
+        return this.httpservice.post(this.API_URL+environment.addremainder+'?noteId='+note.id,{note},{headers:new HttpHeaders({'token':this.token})});
+        
+    }
+    removeremainder(note:any): Observable<any> { 
+        return this.httpservice.get(this.API_URL+environment.removeremainder+'?noteId='+note.id,{headers:new HttpHeaders({'token':this.token})});
+        
+    }
 
 
        

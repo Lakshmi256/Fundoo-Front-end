@@ -23,9 +23,12 @@ getuser:'http://localhost:8080/user',
   addcolor:'/addcolor/',
  createadmap:'/createandmap/',
  maplabel:'/addlabel/',
+ removemaplabel:'/remove/',
 getlabelnotes:'/getlabelsnotes',
 getalllabels:'/getlabels',
 createlabel:'/create',
 deletelabel:'/delete',
+addremainder:'/addremainder/',
+removeremainder:'/removeRemainder/',
 };
 

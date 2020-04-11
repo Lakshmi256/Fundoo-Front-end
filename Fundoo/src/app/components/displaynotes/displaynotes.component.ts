@@ -5,6 +5,10 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { GetnotesService } from 'src/app/service/getnotes.service';
 import { UpdatenotesComponent } from '../updatenotes/updatenotes.component';
 import { ViewserviceService } from 'src/app/service/viewservice.service';
+import { NoteServiceService } from 'src/app/service/noteservice.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Label } from 'src/app/model/label';
+import { LabelService } from 'src/app/service/label.service';
 
 @Component({
   selector: 'app-displaynotes',
@@ -20,6 +24,8 @@ export class DisplaynotesComponent implements OnInit {
   getAllNotes: [];
   pinnotes: Note[];
   unpinnotes:Note[];
+  label:Label=new Label()
+  lab:boolean=false;
   trash:boolean=false;
   archieve:boolean=false;
   searchnote:any;
@@ -27,7 +33,8 @@ export class DisplaynotesComponent implements OnInit {
   direction:string="row";
   view: any;
   constructor(private Notes:GetnotesService,private dialog: MatDialog,private viewservice:ViewserviceService,
-     private router: Router,private route:ActivatedRoute) { 
+    private snackBar:MatSnackBar,private labelservice:LabelService,
+     private router: Router,private route:ActivatedRoute,private noteservice:NoteServiceService) { 
       this.viewservice.getView().subscribe(
         (res) => {
                     this.view = res;
@@ -65,12 +72,13 @@ export class DisplaynotesComponent implements OnInit {
   displayNotes() {
     
  
-
+this.lab=false
       this.trash=false;
       this.archieve=false;
       this.notes = this.Notes.getNotesList()
 
       this.pinnotes = this.Notes.getPinNotesList()
+
 
 
   }
@@ -107,6 +115,32 @@ export class DisplaynotesComponent implements OnInit {
     });
   }
   getlabelnotes(){
+    this.lab=true;
     this.notes=this.Notes.getlabelNotes();
   }
+  onClickDelete(id){
+
+  }
+  onClickRestore(id){
+
+  }
+  onDeleteRem(note){
+    this.noteservice.removeremainder(note).subscribe((response) => {
+      this.snackBar.open("remainder added", 'ok', { duration: 5000 });
+    },
+      error => {
+        this.C.open("error adding remainder", 'ok', { duration: 5000 });
+  
+      }
+    );
+  }
+  removemapping(noteId,labelId){
+    this.labelservice.removemaping(labelId,noteId).subscribe((response)=>{
+      this.snackBar.open("label unmapped", "Ok", { duration: 3000 });
+    },
+      (error) => {
+        this.snackBar.open("error", "Ok", { duration: 3000 });
+      });
+  }
+
 }

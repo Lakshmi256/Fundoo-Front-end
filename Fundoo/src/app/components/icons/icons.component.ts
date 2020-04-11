@@ -5,7 +5,15 @@ import { NoteServiceService } from 'src/app/service/noteservice.service';
 import { MatDialog } from '@angular/material/dialog';
 import { LabelComponent } from '../label/label.component';
 import { CollaboratorComponent } from '../collaborator/collaborator.component';
-
+export const MY_CUSTOM_FORMATS = {
+  parseInput: 'LL LT',
+  fullPickerInput: 'LL LT',
+  datePickerInput: 'LL',
+  timePickerInput: 'LT',
+  monthYearLabel: 'MMM YYYY',
+  dateA11yLabel: 'LL',
+  monthYearA11yLabel: 'MMMM YYYY',
+};
 @Component({
   selector: 'app-icons',
   templateUrl: './icons.component.html',
@@ -110,4 +118,16 @@ onClickDelete() {
     });
 
 }
+datePicker(){
+  this.noteService.addremainder(this.note).subscribe((response) => {
+    this.snackBar.open("remainder added", 'ok', { duration: 5000 });
+  },
+    error => {
+      this.snackBar.open("error adding remainder", 'ok', { duration: 5000 });
+
+    }
+  );
+}
+
+
 }

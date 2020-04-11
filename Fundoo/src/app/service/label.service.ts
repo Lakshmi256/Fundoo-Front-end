@@ -56,5 +56,9 @@ getlabelnotes(labelId :any): Observable<any> {
   return this.httpservice.get(this.API_URL+environment.getlabelnotes+'?labelId='+labelId,{headers:new HttpHeaders({'token':this.token})});
  
 }
-
+removemaping(labelId :any,noteId:any): Observable<any> { 
+       
+  return this.httpservice.post(this.API_URL+environment.removemaplabel+labelId+'?noteId='+noteId,{},{headers:new HttpHeaders({'token':this.token})});
+ 
+}
 }

@@ -9,6 +9,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDialogModule} from '@angular/material/dialog';
 import { FlexLayoutModule } from "@angular/flex-layout";
+import {MatChipsModule} from '@angular/material/chips';
 
 
 import {MatMenuModule} from '@angular/material/menu';
@@ -92,8 +93,8 @@ import { CollaboratorComponent } from './components/collaborator/collaborator.co
     // DlDateTimeDateModule,
     //  DlDateTimePickerModule
     OwlDateTimeModule,
-    OwlNativeDateTimeModule
-    
+    OwlNativeDateTimeModule,
+    MatChipsModule
   ],
   providers: [HttpClient],
   bootstrap: [AppComponent]

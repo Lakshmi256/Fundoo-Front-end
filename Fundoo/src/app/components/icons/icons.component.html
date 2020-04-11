@@ -1,11 +1,7 @@
 <div class="main" fxLayout="row" fxLayoutAlign="space-between center">
   
-    <button mat-icon-button style="font-size: 5px;" >
-
-        <span class="material-icons">
-            notification_important
-            </span>
-       
+    <button mat-icon-button [matMenuTriggerFor]="menu3">
+        <mat-icon class=color> add_alert</mat-icon>
       </button>
       <button mat-icon-button matTooltip="Add Collobrate" (click)=collabrator()>
         <span class="material-icons">
@@ -56,5 +52,23 @@
         <button mat-menu-item (click)="openDialog(note)">Add Label</button>
         </mat-menu>
         </div>
+        <div>
+            <mat-menu #menu3="matMenu">
+              <span style="margin-left: 10px">Reminder:</span>
+              <br>
+              <button  mat-menu-item >Later Today</button>
 
+              <button  mat-menu-item >Tomorrow</button>
+
+              <button  mat-menu-item >Next Week</button>
+
+           
+            <label class="example-input-wrapper">
+              <input placeholder="choose your date" [(ngModel)]="note.reminder" [owlDateTimeTrigger]="dt" [owlDateTime]="dt">
+              <owl-date-time #dt></owl-date-time>
+              <button mat-icon-button color="primary" (click)="datePicker()">Save</button>
+            </label>
+      
+            </mat-menu>
+          </div>
 </div>
